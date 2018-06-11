@@ -12,7 +12,7 @@ import model.Administrativo;
  *
  * @author Deyvidy
  */
-public class AdministrativoDao {
+public class AdministrativoDao implements InterfaceAdministracaoDao{
     
     protected static ArrayList<Administrativo> bancoDeDados = new ArrayList<>();
     

@@ -7,7 +7,7 @@ import model.Aluno;
  *
  * @author Deyvidy
  */
-public class AlunoDao{
+public class AlunoDao implements InterfaceAlunoDao{
     protected static ArrayList<Aluno> bancoDeDados = new ArrayList<>();
     
     public void inserir(Aluno elemento) {

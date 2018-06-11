@@ -12,7 +12,7 @@ import model.Escolas;
  *
  * @author Deyvidy
  */
-public class EscolaDao {
+public class EscolaDao implements InterfaceEscolaDao {
     protected static ArrayList<Escolas> bancoDeDados = new ArrayList<>();
     
     public void inserir(Escolas elemento) {

@@ -12,7 +12,7 @@ import model.Setor;
  *
  * @author Deyvidy
  */
-public class SetorDao {
+public class SetorDao implements InterfaceSetorDao {
     protected static ArrayList<Setor> bancoDeDados = new ArrayList<>();
     
     public void inserir(Setor elemento) {
@@ -38,10 +38,10 @@ public class SetorDao {
         return resultado;
     }
     
-    public void atualizar(Setor setor) {
-        Setor pesquisado = pesquisar( setor.getId());
+    public void atualizar(Setor elemento) {
+        Setor pesquisado = pesquisar( elemento.getId());
 
-        pesquisado.setNome(setor.getNome());
+        pesquisado.setNome(elemento.getNome());
         
     }
     

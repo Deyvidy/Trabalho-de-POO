@@ -12,7 +12,7 @@ import model.Disciplina;
  *
  * @author Deyvidy
  */
-public class DisciplinasDao {
+public class DisciplinasDao implements InterfaceDisciplinaDao{
     protected static ArrayList<Disciplina> bancoDeDados = new ArrayList<>();
     
     public void inserir(Disciplina elemento) {

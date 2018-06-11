@@ -3,7 +3,7 @@ package model.Dao;
 import java.util.ArrayList;
 import model.Professor;
 
-public class ProfessorDao{
+public class ProfessorDao implements InterfaceProfessorDao{
     protected static ArrayList<Professor> bancoDeDados = new ArrayList<>();
 
     public void inserir(Professor aluno) {

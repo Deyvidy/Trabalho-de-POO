@@ -8,7 +8,7 @@ import model.Turmas;
  * @author Deyvidy
  */
 
-public class TurmasDao {
+public class TurmasDao implements InterfaceTurmasDao{
     protected static ArrayList<Turmas> bancoDeDados = new ArrayList<>();
     
     public void inserir(Turmas elemento) {
