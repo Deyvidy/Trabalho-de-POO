@@ -38,6 +38,16 @@ public class SetorDao implements InterfaceSetorDao {
         return resultado;
     }
     
+    public Setor buscarObjeto( int elemento ) {
+        Setor setor = null;
+        for ( int i = 0; i < this.bancoDeDados.size( ); i++ ) {
+            if( this.bancoDeDados.get(i).getId() == elemento) {
+                setor = this.bancoDeDados.get(i);
+            }
+        }
+        return setor;
+    }
+    
     public void atualizar(Setor elemento) {
         Setor pesquisado = pesquisar( elemento.getId());
 

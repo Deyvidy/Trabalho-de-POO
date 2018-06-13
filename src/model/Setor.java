@@ -4,7 +4,7 @@ public class Setor {
     private int id;
     private String nome;
     
-
+    public Setor(){};
     public Setor(String nome) {
         this.nome = nome;
         this.id += 1;

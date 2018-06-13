@@ -1,12 +1,13 @@
 package view;
 
 import java.util.Scanner;
+import model.Aluno;
 
 /**
  *
  * @author Deyvidy
  */
-public class Teclado {
+public class Teclado <T>{
     private Scanner teclado;
 	
     public Teclado() {
@@ -15,16 +16,18 @@ public class Teclado {
     
 
     public String lerString(String rotulo) {
-            System.out.print(rotulo);
-            return teclado.nextLine();
+        System.out.print(rotulo);
+        return teclado.nextLine();
     }
     
     public int lerInt(String rotulo) {
-            System.out.print(rotulo);
-            return teclado.nextInt();
+        System.out.print(rotulo);
+        return teclado.nextInt();
     }
      
     public double lerDouble(String rotulo) {
-            return Double.parseDouble(lerString(rotulo));
-    }
+        System.out.print(rotulo);
+        return Double.parseDouble(lerString(rotulo));
+    }   
+    
 }

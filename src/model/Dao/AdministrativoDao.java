@@ -39,6 +39,16 @@ public class AdministrativoDao implements InterfaceAdministracaoDao{
         return resultado;
     }
     
+    public Administrativo buscarObjeto( String matricula ) {
+        Administrativo administrativo = null;
+        for ( int i = 0; i < this.bancoDeDados.size( ); i++ ) {
+            if( this.bancoDeDados.get(i).getMatricula().equalsIgnoreCase(matricula)) {
+                administrativo = this.bancoDeDados.get(i);
+            }
+        }
+        return administrativo;
+    }
+    
     public void atualizar(Administrativo aluno) {
         Administrativo pesquisado = pesquisar( aluno.getMatricula());
 
