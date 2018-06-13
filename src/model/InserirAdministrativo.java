@@ -35,7 +35,7 @@ public class InserirAdministrativo extends ItensDoMenu{
         
         administracaoDao.inserir(adm);
 
-        System.out.println("Aluno cadastrado com sucesso!");
+        System.out.println("Funcionario do administrativo cadastrado com sucesso!");
 
         return false;
     }

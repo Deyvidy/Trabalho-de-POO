@@ -17,7 +17,7 @@ public class Teclado <T>{
 
     public String lerString(String rotulo) {
         System.out.print(rotulo);
-        return teclado.nextLine();
+        return teclado.next();
     }
     
     public int lerInt(String rotulo) {

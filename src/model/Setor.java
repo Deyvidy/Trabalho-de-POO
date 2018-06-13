@@ -5,9 +5,14 @@ public class Setor {
     private String nome;
     
     public Setor(){};
-    public Setor(String nome) {
+    
+    public Setor( int id ){
+        this(null, id);
+    }
+    
+    public Setor(String nome, int id) {
         this.nome = nome;
-        this.id += 1;
+        this.id = id;
     }
 
     public int getId() {

@@ -2,6 +2,10 @@ package view;
 
 import java.util.Scanner;
 import model.InserirAdministrativo;
+import model.SetorAlterar;
+import model.SetorExcluir;
+import model.SetorInserir;
+import model.SetorListar;
 
 
 public class Main {
@@ -17,9 +21,7 @@ public class Main {
                 + "\n[3] Alteracão "
                 + "\n[4] Exclusão"
                 + "\n[0] Sair"
-        );
-        
-        
+        );       
         
         int op = teclado.nextInt();
         do {                 
@@ -36,18 +38,19 @@ public class Main {
             }                       
         } while (!sair);
         
-    }   
-    
+    }     
     
     public static void cadastro ( Scanner teclado ){
-
+        String[] back = null;
         ItensDoMenu[] cadastros = new ItensDoMenu[] { 
             new InserirAdministrativo(),
-            new Sair()
+            new SetorInserir(),
+            new Voltar()
 
         };
         
         boolean sair = false;
+        
         do {
             for (int i = 0; i < cadastros.length; i++) {
                 System.out.println(i + " - " + cadastros[i].descricao());
@@ -56,14 +59,17 @@ public class Main {
             int opcao = teclado.nextInt();
 
             sair = cadastros[opcao].executar();
+            if (sair){
+                main(back);
+            }
         } while (!sair);
     }   
     
     public static void listagem ( Scanner teclado ){
-
+        String[] back = null;
         ItensDoMenu[] listagem = new ItensDoMenu[] { 
-            new InserirAdministrativo(),
-            new Sair()
+            new SetorListar(),
+            new Voltar()
             
         };
         
@@ -76,15 +82,17 @@ public class Main {
             int opcao = teclado.nextInt();
 
             sair = listagem[opcao].executar();
+            if (sair){
+                main(back);
+            }
         } while (!sair);
-    }   
-    
+    }      
     
     public static void alteracao ( Scanner teclado ){
-
+        String[] back = null;
         ItensDoMenu[] alteracao = new ItensDoMenu[] { 
-            new InserirAdministrativo(),
-            new Sair()
+            new SetorAlterar(),
+            new Voltar()
             
         };
         
@@ -97,14 +105,17 @@ public class Main {
             int opcao = teclado.nextInt();
 
             sair = alteracao[opcao].executar();
+            if (sair){
+                main(back);
+            }
         } while (!sair);
     }   
     
     public static void exclusao ( Scanner teclado ){
-
+        String[] back = null;
         ItensDoMenu[] exclusao = new ItensDoMenu[] { 
-            new InserirAdministrativo(),
-            new Sair()
+            new SetorExcluir(),
+            new Voltar()
             
         };
         
@@ -117,6 +128,9 @@ public class Main {
             int opcao = teclado.nextInt();
 
             sair = exclusao[opcao].executar();
+            if (sair){
+                main(back);
+            }
         } while (!sair);
     }   
 
