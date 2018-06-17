@@ -7,14 +7,6 @@ import model.Curso;
  *
  * @author Deyvidy
  */
-public interface InterfaceCursoDao {
-    void inserir(Curso aluno);
+public interface InterfaceCursoDao extends InterfaceDao<Curso> {
 
-    ArrayList<Curso> listar();
-
-    Curso pesquisar(int elemento);
-
-    void atualizar(Curso elemento);
-
-    void remover(Curso elemento);
 }

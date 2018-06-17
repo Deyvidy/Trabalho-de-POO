@@ -7,15 +7,6 @@ import model.Administrativo;
  *
  * @author Deyvidy
  */
-public interface InterfaceAdministracaoDao {
-    
-    void inserir(Administrativo aluno);
+public interface InterfaceAdministracaoDao  extends InterfaceDao<Administrativo> {
 
-    ArrayList<Administrativo> listar();
-
-    Administrativo pesquisar(String elemento);
-
-    void atualizar(Administrativo elemento);
-
-    void remover(Administrativo elemento);
 }

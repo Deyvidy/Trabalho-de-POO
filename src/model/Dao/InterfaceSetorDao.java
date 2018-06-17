@@ -7,14 +7,6 @@ import model.Setor;
  *
  * @author Deyvidy
  */
-public interface InterfaceSetorDao {
-    void inserir(Setor aluno);
+public interface InterfaceSetorDao  extends InterfaceDao<Setor> {
 
-    ArrayList<Setor> listar();
-
-    Setor pesquisar(int elemento);
-
-    void atualizar(Setor elemento);
-
-    void remover(Setor elemento);
 }
