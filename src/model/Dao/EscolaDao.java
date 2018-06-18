@@ -23,7 +23,7 @@ public class EscolaDao implements InterfaceEscolaDao {
         return bancoDeDados;
     }
     
-    public Escolas pesquisar(int elemento) {
+    public Escolas pesquisar(Integer elemento) {
         Escolas resultado = null;
 
         for (int i = 0; i < bancoDeDados.size(); i++) {
@@ -37,7 +37,22 @@ public class EscolaDao implements InterfaceEscolaDao {
 
         return resultado;
     }
-    
+
+    public Escolas pesquisar(String nome) {
+        Escolas resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+            Escolas atual = bancoDeDados.get(i);
+
+            if ( atual.getNome() == nome) {
+                resultado = atual;
+                break;
+            }
+        }
+
+        return resultado;
+    }
+
     public void atualizar(Escolas elemento) {
         Escolas pesquisado = pesquisar( elemento.getId());
 

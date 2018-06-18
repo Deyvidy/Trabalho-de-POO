@@ -7,14 +7,6 @@ import model.Escolas;
  *
  * @author Deyvidy
  */
-public interface InterfaceEscolaDao {
-    void inserir(Escolas aluno);
+public interface InterfaceEscolaDao extends InterfaceDao<Escolas> {
 
-    ArrayList<Escolas> listar();
-
-    Escolas pesquisar(int elemento);
-
-    void atualizar(Escolas elemento);
-
-    void remover(Escolas elemento);
 }

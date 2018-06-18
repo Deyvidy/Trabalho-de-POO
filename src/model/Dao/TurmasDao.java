@@ -19,7 +19,7 @@ public class TurmasDao implements InterfaceTurmasDao{
         return bancoDeDados;
     }
     
-    public Turmas pesquisar(int elemento) {
+    public Turmas pesquisar(Integer elemento) {
         Turmas resultado = null;
 
         for (int i = 0; i < bancoDeDados.size(); i++) {
@@ -29,6 +29,21 @@ public class TurmasDao implements InterfaceTurmasDao{
                         resultado = atual;
                         break;
                 }
+        }
+
+        return resultado;
+    }
+
+    public Turmas pesquisar(String nome) {
+        Turmas resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+            Turmas atual = bancoDeDados.get(i);
+
+            if (atual.getNome()== nome) {
+                resultado = atual;
+                break;
+            }
         }
 
         return resultado;

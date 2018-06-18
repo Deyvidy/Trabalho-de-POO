@@ -12,14 +12,6 @@ import model.Aluno;
  *
  * @author Deyvidy
  */
-public interface InterfaceAlunoDao {
-    void inserir(Aluno aluno);
+public interface InterfaceAlunoDao extends InterfaceDao<Aluno> {
 
-    ArrayList<Aluno> listar();
-
-    Aluno pesquisar(String elemento);
-
-    void atualizar(Aluno elemento);
-
-    void remover(Aluno elemento);
 }

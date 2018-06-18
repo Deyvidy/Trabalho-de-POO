@@ -38,6 +38,11 @@ public class AdministrativoDao implements InterfaceAdministracaoDao{
 
         return resultado;
     }
+
+    public Administrativo pesquisar(Integer Id) {
+        // TODO
+        return null;
+    }
     
     public Administrativo buscarObjeto( String matricula ) {
         Administrativo administrativo = null;

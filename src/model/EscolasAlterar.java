@@ -10,26 +10,27 @@ public class EscolasAlterar extends ItensDoMenu{
 
     @Override
     public String descricao() {
-        return "Alterar dados das escolas ";
+        return "Alterar dados da escola ";
     }
 
     @Override
     public boolean executar() {
         int id = teclado.lerInt("Informe o Id: ");
-        Escolas escolas = escolaDao.pesquisar(id);
 
-        if (escolas == null) {
-            System.out.println("Setor não encontrado!");
+        Escolas escola = escolaDao.pesquisar(id);
+
+        if (escola == null) {
+            System.out.println("Escola não encontrado!");
         }
         else {
-            System.out.println("Id: " + escolas.getId());
-            System.out.println("Nome: " + escolas.getNome());            
+            System.out.println("Id: " + escola.getId());
+            System.out.println("Nome: " + escola.getNome());
 
-            String nome = teclado.lerString("Novo nome: ");            
+            String nome = teclado.lerString("Novo nome: ");
 
-            escolas.setNome(nome);            
+            escola.setNome(nome);
 
-            escolaDao.atualizar(escolas);
+            escolaDao.atualizar(escola);
             
         }
 

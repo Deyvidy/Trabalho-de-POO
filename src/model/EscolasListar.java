@@ -9,6 +9,7 @@ import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 import view.ItensDoMenu;
 
+
 /**
  *
  * @author Deyvidy
@@ -27,10 +28,10 @@ public class EscolasListar extends ItensDoMenu implements Comparator<Escolas>{
         Collections.sort(escolas, this);
 
         for (int i = 0; i < escolas.size(); i++) {
-                Escolas atual = escolas.get(i);
+                Escolas escola = escolas.get(i);
 
-                if (deveImprimir(atual)) {
-                        System.out.println(atual.getId()+ " - " + atual.getNome());
+                if (deveImprimir(escola)) {
+                        System.out.println(escola.getId()+ " - " + escola.getNome());
                 }
         }
 
@@ -38,7 +39,8 @@ public class EscolasListar extends ItensDoMenu implements Comparator<Escolas>{
         
     }
     
-    public boolean deveImprimir(Escolas escolas){
+
+    public boolean deveImprimir(Escolas escola){
         return true;
     }
     

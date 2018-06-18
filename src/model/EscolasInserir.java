@@ -7,24 +7,23 @@ import view.ItensDoMenu;
  * @author Deyvidy
  */
 public class EscolasInserir extends ItensDoMenu{
-    private int quantidade;
 
     @Override
     public String descricao() {
-        return "Cadastra escolas ";
+        return "Cadastra Escola ";
+
     }
 
     @Override
     public boolean executar() {
-        this.quantidade++;
+
         String nome = teclado.lerString("Nome: ");
-        int id = quantidade;        
         
-        Escolas escolas = new Escolas( nome, id );        
+        Escolas escola = new Escolas(nome);
 
-        escolaDao.inserir(escolas);
+        escolaDao.inserir(escola);
 
-        System.out.println("Setor cadastrado com sucesso!");
+        System.out.println("Escola cadastrada com sucesso!");
 
         return false;
     }

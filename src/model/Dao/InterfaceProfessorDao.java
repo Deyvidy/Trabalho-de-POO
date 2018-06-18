@@ -7,14 +7,6 @@ import model.Professor;
  *
  * @author Deyvidy
  */
-public interface InterfaceProfessorDao {
-    void inserir(Professor aluno);
+public interface InterfaceProfessorDao  extends InterfaceDao<Professor> {
 
-    ArrayList<Professor> listar();
-
-    Professor pesquisar(String elemento);
-
-    void atualizar(Professor elemento);
-
-    void remover(Professor elemento);
 }

@@ -1,16 +1,7 @@
 package view;
 
 import java.util.Scanner;
-import model.EscolasAlterar;
-import model.EscolasExcluir;
-import model.EscolasInserir;
-import model.EscolasListar;
-import model.AdministrativoInserir;
-import model.SetorAlterar;
-import model.SetorExcluir;
-import model.SetorInserir;
-import model.SetorListar;
-
+import model.*;
 
 public class Main {
 
@@ -50,6 +41,7 @@ public class Main {
             new AdministrativoInserir(),
             new EscolasInserir(),
             new SetorInserir(),
+            new EscolasInserir(),
             new Voltar()
 
         };

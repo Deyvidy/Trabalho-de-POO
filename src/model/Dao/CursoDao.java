@@ -19,7 +19,7 @@ public class CursoDao implements InterfaceCursoDao{
         return bancoDeDados;
     }
     
-    public Curso pesquisar(int elemento) {
+    public Curso pesquisar(Integer elemento) {
         Curso resultado = null;
 
         for (int i = 0; i < bancoDeDados.size(); i++) {
@@ -29,6 +29,21 @@ public class CursoDao implements InterfaceCursoDao{
                         resultado = atual;
                         break;
                 }
+        }
+
+        return resultado;
+    }
+
+    public Curso pesquisar(String nome) {
+        Curso resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+            Curso atual = bancoDeDados.get(i);
+
+            if (atual.getNome()==nome) {
+                resultado = atual;
+                break;
+            }
         }
 
         return resultado;

@@ -32,6 +32,12 @@ public class AlunoDao implements InterfaceAlunoDao{
 
         return resultado;
     }
+
+    public Aluno pesquisar(Integer num) {
+        // TODO
+
+        return null;
+    }
     
     public void atualizar(Aluno aluno) {
         Aluno pesquisado = pesquisar( aluno.getMatricula());

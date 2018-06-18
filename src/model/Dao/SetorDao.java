@@ -23,7 +23,7 @@ public class SetorDao implements InterfaceSetorDao {
         return bancoDeDados;
     }
     
-    public Setor pesquisar(int elemento) {
+    public Setor pesquisar(Integer elemento) {
         Setor resultado = null;
 
         for (int i = 0; i < bancoDeDados.size(); i++) {
@@ -33,6 +33,21 @@ public class SetorDao implements InterfaceSetorDao {
                         resultado = atual;
                         break;
                 }
+        }
+
+        return resultado;
+    }
+
+    public Setor pesquisar(String nome) {
+        Setor resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+            Setor atual = bancoDeDados.get(i);
+
+            if (atual.getNome()==nome) {
+                resultado = atual;
+                break;
+            }
         }
 
         return resultado;

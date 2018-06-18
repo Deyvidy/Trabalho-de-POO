@@ -7,14 +7,6 @@ import model.Disciplina;
  *
  * @author Deyvidy
  */
-public interface InterfaceDisciplinaDao {
-    void inserir(Disciplina aluno);
+public interface InterfaceDisciplinaDao extends InterfaceDao<Disciplina> {
 
-    ArrayList<Disciplina> listar();
-
-    Disciplina pesquisar(int elemento);
-
-    void atualizar(Disciplina elemento);
-
-    void remover(Disciplina elemento);
 }

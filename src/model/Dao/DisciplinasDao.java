@@ -23,7 +23,7 @@ public class DisciplinasDao implements InterfaceDisciplinaDao{
         return bancoDeDados;
     }
     
-    public Disciplina pesquisar(int elemento) {
+    public Disciplina pesquisar(Integer elemento) {
         Disciplina resultado = null;
 
         for (int i = 0; i < bancoDeDados.size(); i++) {
@@ -33,6 +33,21 @@ public class DisciplinasDao implements InterfaceDisciplinaDao{
                         resultado = atual;
                         break;
                 }
+        }
+
+        return resultado;
+    }
+
+    public Disciplina pesquisar(String nome) {
+        Disciplina resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+            Disciplina atual = bancoDeDados.get(i);
+
+            if (atual.getNome()==nome) {
+                resultado = atual;
+                break;
+            }
         }
 
         return resultado;
