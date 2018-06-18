@@ -1,11 +1,8 @@
 package view;
 
 import java.util.Scanner;
-import model.InserirAdministrativo;
-import model.SetorAlterar;
-import model.SetorExcluir;
-import model.SetorInserir;
-import model.SetorListar;
+
+import model.*;
 
 
 public class Main {
@@ -45,6 +42,7 @@ public class Main {
         ItensDoMenu[] cadastros = new ItensDoMenu[] { 
             new InserirAdministrativo(),
             new SetorInserir(),
+            new EscolasInserir(),
             new Voltar()
 
         };

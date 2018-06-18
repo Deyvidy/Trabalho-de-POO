@@ -31,6 +31,10 @@ public class ProfessorDao implements InterfaceProfessorDao{
         return resultado;
     }
 
+    public Professor pesquisar(Integer Id) {
+        // TODO
+        return null;
+    }
 
     public void atualizar(Professor elemento) {
         Professor pesquisado = pesquisar(elemento.getMatricula());
