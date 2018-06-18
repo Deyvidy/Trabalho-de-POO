@@ -1,5 +1,7 @@
 package model;
-/*O sistema deverá permitir o cadastro/atualização de turmas, armazenando/modificando as
+
+/*
+* O sistema deverá permitir o cadastro/atualização de turmas, armazenando/modificando as
 * seguintes informações: código, nome, disciplina (escolhida de uma lista), professor (escolhido de
 * uma lista) e alunos (escolhidos de uma lista). O sistema deve permitir a exclusão do cadastro
 * através do código

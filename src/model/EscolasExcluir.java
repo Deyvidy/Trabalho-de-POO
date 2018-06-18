@@ -7,24 +7,24 @@ import view.ItensDoMenu;
  * @author Deyvidy
  */
 
-public class SetorExcluir extends ItensDoMenu{
+public class EscolasExcluir extends ItensDoMenu{
 
     @Override
     public String descricao() {
-        return "Excluir O setor";
+        return "Excluir ESCOLAS";
     }
 
     @Override
     public boolean executar() {
         int id = teclado.lerInt("id: ");
-        Setor setor = setorDao.pesquisar(id);
+        Escolas escolas = escolaDao.pesquisar(id);
 
-        if ( setor == null) {
-            System.out.println("Setor não encontrado!");
+        if ( escolas == null) {
+            System.out.println("Escola não encontrada!");
         }
         else {
-            
-            setorDao.remover(setor);
+           
+            escolaDao.remover(escolas);
         }
 
         return false;

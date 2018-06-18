@@ -8,7 +8,7 @@ import view.ItensDoMenu;
  * @author Deyvidy
  */
 
-public class InserirAdministrativo extends ItensDoMenu{
+public class AdministrativoInserir extends ItensDoMenu{
 
     @Override
     public String descricao() {

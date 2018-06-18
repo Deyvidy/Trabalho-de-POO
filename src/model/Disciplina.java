@@ -1,6 +1,9 @@
 package model;
 
-/*O sistema deverá permitir o cadastro/atualização de disciplinas, armazenando/modificando
+import java.util.ArrayList;
+
+/*
+* O sistema deverá permitir o cadastro/atualização de disciplinas, armazenando/modificando
 * as seguintes informações: código, nome da disciplina, cursos* (escolhido de uma lista de cursos
 * cadastrados).
 * A disciplina pode ser de vários cursos (Ex: Algoritmos em Eng. Civil e Algortimos em SI)
@@ -9,7 +12,7 @@ package model;
 public class Disciplina {
     protected int id;
     protected String nome;
-    protected Curso curso;
+    protected ArrayList<Curso> cursos = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -27,14 +30,16 @@ public class Disciplina {
         this.nome = nome;
     }
 
-    public Curso getCurso() {
-        return curso;
+    public ArrayList<Curso> getCursos() {
+        return cursos;
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
+    public void setCursos(ArrayList<Curso> cursos) {
+        this.cursos = cursos;
     }
-    
+
+   
+   
     
 
 }

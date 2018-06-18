@@ -1,7 +1,11 @@
 package view;
 
 import java.util.Scanner;
-import model.InserirAdministrativo;
+import model.EscolasAlterar;
+import model.EscolasExcluir;
+import model.EscolasInserir;
+import model.EscolasListar;
+import model.AdministrativoInserir;
 import model.SetorAlterar;
 import model.SetorExcluir;
 import model.SetorInserir;
@@ -43,7 +47,8 @@ public class Main {
     public static void cadastro ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] cadastros = new ItensDoMenu[] { 
-            new InserirAdministrativo(),
+            new AdministrativoInserir(),
+            new EscolasInserir(),
             new SetorInserir(),
             new Voltar()
 
@@ -68,6 +73,7 @@ public class Main {
     public static void listagem ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] listagem = new ItensDoMenu[] { 
+            new EscolasListar(),
             new SetorListar(),
             new Voltar()
             
@@ -91,6 +97,7 @@ public class Main {
     public static void alteracao ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] alteracao = new ItensDoMenu[] { 
+            new EscolasAlterar(),
             new SetorAlterar(),
             new Voltar()
             
@@ -115,6 +122,7 @@ public class Main {
         String[] back = null;
         ItensDoMenu[] exclusao = new ItensDoMenu[] { 
             new SetorExcluir(),
+            new EscolasExcluir(),
             new Voltar()
             
         };
