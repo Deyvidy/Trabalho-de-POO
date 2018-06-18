@@ -16,6 +16,7 @@ public class EscolasExcluir extends ItensDoMenu{
     @Override
     public boolean executar() {
         int id = teclado.lerInt("id: ");
+
         Escolas escola = escolaDao.pesquisar(id);
 
         if ( escola == null) {
@@ -24,6 +25,7 @@ public class EscolasExcluir extends ItensDoMenu{
         else {
 
             escolaDao.remover(escola);
+
         }
 
         return false;

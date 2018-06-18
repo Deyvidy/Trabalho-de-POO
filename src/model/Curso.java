@@ -1,7 +1,9 @@
 package model;
-/*O sistema deverá permitir o cadastro/atualização de cursos, armazenando/modificando as
-seguintes informações: código, nome do curso e escola a qual pertence (escolhida de uma lista de
-escolas cadastradas). O sistema deve permitir a exclusão do cadastro através do código.
+
+/*
+* O sistema deverá permitir o cadastro/atualização de cursos, armazenando/modificando as
+* seguintes informações: código, nome do curso e escola a qual pertence (escolhida de uma lista de
+* escolas cadastradas). O sistema deve permitir a exclusão do cadastro através do código.
 */
 
 

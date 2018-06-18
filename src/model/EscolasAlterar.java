@@ -16,6 +16,7 @@ public class EscolasAlterar extends ItensDoMenu{
     @Override
     public boolean executar() {
         int id = teclado.lerInt("Informe o Id: ");
+
         Escolas escola = escolaDao.pesquisar(id);
 
         if (escola == null) {

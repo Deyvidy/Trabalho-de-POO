@@ -1,5 +1,11 @@
 package model;
 
+/*
+* O sistema deverá permitir o cadastro/atualização de aluno, armazenando/modificando as
+* seguintes informações: id, nome. O sistema deve permitir a exclusão do cadastro através da
+* matrícula.
+*/
+
 public class Setor {
     private int id;
     private String nome;

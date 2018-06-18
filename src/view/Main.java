@@ -1,9 +1,7 @@
 package view;
 
 import java.util.Scanner;
-
 import model.*;
-
 
 public class Main {
 
@@ -40,7 +38,8 @@ public class Main {
     public static void cadastro ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] cadastros = new ItensDoMenu[] { 
-            new InserirAdministrativo(),
+            new AdministrativoInserir(),
+            new EscolasInserir(),
             new SetorInserir(),
             new EscolasInserir(),
             new Voltar()
@@ -66,6 +65,7 @@ public class Main {
     public static void listagem ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] listagem = new ItensDoMenu[] { 
+            new EscolasListar(),
             new SetorListar(),
             new Voltar()
             
@@ -89,6 +89,7 @@ public class Main {
     public static void alteracao ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] alteracao = new ItensDoMenu[] { 
+            new EscolasAlterar(),
             new SetorAlterar(),
             new Voltar()
             
@@ -113,6 +114,7 @@ public class Main {
         String[] back = null;
         ItensDoMenu[] exclusao = new ItensDoMenu[] { 
             new SetorExcluir(),
+            new EscolasExcluir(),
             new Voltar()
             
         };

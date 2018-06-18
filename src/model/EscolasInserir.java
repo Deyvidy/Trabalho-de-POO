@@ -11,10 +11,12 @@ public class EscolasInserir extends ItensDoMenu{
     @Override
     public String descricao() {
         return "Cadastra Escola ";
+
     }
 
     @Override
     public boolean executar() {
+
         String nome = teclado.lerString("Nome: ");
         
         Escolas escola = new Escolas(nome);

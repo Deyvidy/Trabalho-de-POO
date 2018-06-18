@@ -6,6 +6,7 @@ import view.ItensDoMenu;
  *
  * @author Deyvidy
  */
+
 public class SetorExcluir extends ItensDoMenu{
 
     @Override
@@ -22,9 +23,8 @@ public class SetorExcluir extends ItensDoMenu{
             System.out.println("Setor não encontrado!");
         }
         else {
-            Setor setorRemover = new Setor(id);
-
-            setorDao.remover(setorRemover);
+            
+            setorDao.remover(setor);
         }
 
         return false;

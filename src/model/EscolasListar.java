@@ -1,10 +1,14 @@
 package model;
 
-import view.ItensDoMenu;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.function.Function;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
+import java.util.function.ToLongFunction;
+import view.ItensDoMenu;
+
 
 /**
  *
@@ -35,6 +39,7 @@ public class EscolasListar extends ItensDoMenu implements Comparator<Escolas>{
         
     }
     
+
     public boolean deveImprimir(Escolas escola){
         return true;
     }
