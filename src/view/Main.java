@@ -14,6 +14,10 @@ import model.CursoAlterar;
 import model.CursoExcluir;
 import model.CursoInserir;
 import model.CursoListar;
+import model.ProfessorAlterar;
+import model.ProfessorExcluir;
+import model.ProfessorInserir;
+import model.ProfessorListar;
 import model.SetorAlterar;
 import model.SetorExcluir;
 import model.SetorInserir;
@@ -56,6 +60,7 @@ public class Main {
         String[] back = null;
         ItensDoMenu[] cadastros = new ItensDoMenu[] { 
             new AdministrativoInserir(),
+            new ProfessorInserir(),
             new AlunoInserir(),
             new CursoInserir(),
             new EscolasInserir(),
@@ -83,6 +88,7 @@ public class Main {
     public static void listagem ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] listagem = new ItensDoMenu[] { 
+            new ProfessorListar(),
             new AlunoListar(),
             new CursoListar(),
             new EscolasListar(),
@@ -109,6 +115,7 @@ public class Main {
     public static void alteracao ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] alteracao = new ItensDoMenu[] { 
+            new ProfessorAlterar(),
             new AlunoAlterar(),
             new CursoAlterar(),
             new EscolasAlterar(),
@@ -135,6 +142,7 @@ public class Main {
     public static void exclusao ( Scanner teclado ){
         String[] back = null;
         ItensDoMenu[] exclusao = new ItensDoMenu[] {
+            new ProfessorExcluir(),
             new AlunoExcluir(),
             new CursoExcluir(),
             new SetorExcluir(),

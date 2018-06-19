@@ -42,6 +42,23 @@ public class Professor extends Funcionarios {
 
     public void setEscola(Escolas escola) {
             this.escola = escola;
-    }    		
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+
+    public Data getAdmissao() {
+        return admissao;
+    }
+
+    public void setAdmissao(Data admissao) {
+        this.admissao = admissao;
+    }
+    
 
 }

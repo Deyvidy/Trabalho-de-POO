@@ -30,7 +30,7 @@ public class EscolasListar extends ItensDoMenu implements Comparator<Escolas>{
                 Escolas atual = escolas.get(i);
 
                 if (deveImprimir(atual)) {
-                        System.out.println(atual.getId()+ " - " + atual.getNome());
+                    System.out.println(atual.getId()+ " - " + atual.getNome());
                 }
         }
 

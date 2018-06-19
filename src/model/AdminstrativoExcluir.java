@@ -11,20 +11,20 @@ public class AdminstrativoExcluir extends ItensDoMenu{
 
     @Override
     public String descricao() {
-        return "Excluir ESCOLAS";
+        return "Excluir ADMINISTRATIVO";
     }
 
     @Override
     public boolean executar() {
-        int id = teclado.lerInt("id: ");
-        Escolas escolas = (Escolas) escolaDao.pesquisar(id);
+        String matricula = teclado.lerString("MATRICULA: ");
+        Administrativo administrativo = (Administrativo) administracaoDao.pesquisar(matricula);
 
-        if ( escolas == null) {
-            System.out.println("Escola não encontrada!");
+        if ( administrativo == null) {
+            System.out.println("FUNCIONARIO não encontrado!");
         }
         else {
            
-            escolaDao.remover(escolas);
+            escolaDao.remover(administrativo);
         }
 
         return false;

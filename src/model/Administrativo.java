@@ -32,6 +32,22 @@ public class Administrativo extends Funcionarios{
             this.setor = setor;
     }
 
+    public Data getAdmissao() {
+        return admissao;
+    }
+
+    public void setAdmissao(Data admissao) {
+        this.admissao = admissao;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+    
     
     
 }

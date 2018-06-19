@@ -11,7 +11,7 @@ public class EscolasInserir extends ItensDoMenu{
 
     @Override
     public String descricao() {
-        return "Cadastra escolas ";
+        return "Cadastra ESCOLAS ";
     }
 
     @Override

@@ -31,11 +31,12 @@ public class AlunoListar extends ItensDoMenu implements Comparator<Aluno>{
 
                 if (deveImprimir(atual)) {
                         System.out.println(atual.getMatricula()+ " - " + atual.getNome()
-                                + " - " + atual.getCurso() + "\n" 
+                                + " - " + atual.getCurso().getNome() + "\n" 
                                 + " - " + atual.getEndereco().getPais()
                                 + " - " + atual.getEndereco().getEstado()
                                 + " - " + atual.getEndereco().getCidade()
                                 + " - " + atual.getEndereco().getBairro()
+                                + " - " + atual.getEndereco().getCep()
                                 + " - " + atual.getEndereco().getRua()
                                 + " - " + atual.getEndereco().getNumero() + "\n"
                                 + " - " + atual.getTelefone().getNumero()

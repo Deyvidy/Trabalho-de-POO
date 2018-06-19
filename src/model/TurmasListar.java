@@ -17,7 +17,7 @@ public class TurmasListar extends ItensDoMenu implements Comparator<Escolas>{
 
     @Override
     public String descricao() {
-        return "Listar escolas em ordem alfabetica";
+        return "Listar TURMAS em ordem alfabetica";
     }
 
     @Override

@@ -10,26 +10,26 @@ public class AdminstrativoAlterar extends ItensDoMenu{
 
     @Override
     public String descricao() {
-        return "Alterar dados das escolas ";
+        return "Alterar dados das ADMINISTRATIVO ";
     }
 
     @Override
     public boolean executar() {
-        int id = teclado.lerInt("Informe o Id: ");
-        Escolas escolas = (Escolas) escolaDao.pesquisar(id);
+        String matricula = teclado.lerString("Informe a MATRICULA: ");
+        Administrativo administrativo = (Administrativo) administracaoDao.pesquisar(matricula);
 
-        if (escolas == null) {
+        if (administrativo == null) {
             System.out.println("Setor não encontrado!");
         }
         else {
-            System.out.println("Id: " + escolas.getId());
-            System.out.println("Nome: " + escolas.getNome());            
+            System.out.println("Id: " + administrativo.getMatricula());
+            System.out.println("Nome: " + administrativo.getNome());            
 
             String nome = teclado.lerString("Novo nome: ");            
 
-            escolas.setNome(nome);            
+            administrativo.setNome(nome);            
 
-            escolaDao.atualizar(escolas);
+            escolaDao.atualizar(administrativo);
             
         }
 

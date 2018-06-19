@@ -13,26 +13,25 @@ import view.ItensDoMenu;
  *
  * @author Deyvidy
  */
-public class AdminstrativoListar extends ItensDoMenu implements Comparator<Administrativo>{
+public class ProfessorListar extends ItensDoMenu implements Comparator<Professor>{
 
     @Override
     public String descricao() {
-        return "Listar ADMINISTRATIVO em ordem alfabetica";
+        return "Listar PROFESSORES em ordem alfabetica";
     }
 
     @Override
     public boolean executar() {
-        ArrayList<Administrativo> administrativo = administracaoDao.listar();
+        ArrayList<Professor> professor = professorDao.listar();
 
-        Collections.sort(administrativo, this);
+        Collections.sort(professor, this);
 
-        for (int i = 0; i < administrativo.size(); i++) {
-                Administrativo atual = administrativo.get(i);
+        for (int i = 0; i < professor.size(); i++) {
+                Professor atual = professor.get(i);
 
                 if (deveImprimir(atual)) {
                     System.out.println(atual.getMatricula() + " - " + atual.getNome()
                             + " - " + atual.getSalario()
-                            + " - " + atual.getSetor().getNome()
                             + " - " + "DATA DE ADMISSAO"
                             + " - " + atual.getAdmissao().getAno()
                             + " - " + atual.getAdmissao().getMes()
@@ -56,12 +55,12 @@ public class AdminstrativoListar extends ItensDoMenu implements Comparator<Admin
         
     }
     
-    public boolean deveImprimir(Administrativo escolas){
+    public boolean deveImprimir(Professor professor){
         return true;
     }
     
     @Override
-    public int compare(Administrativo t, Administrativo t1) {
+    public int compare(Professor t, Professor t1) {
         String nome1 = t.getNome();
         String nome2 = t1.getNome();
 		

@@ -17,17 +17,17 @@ public class AlunoInserir extends ItensDoMenu{
 
     @Override
     public boolean executar() {
-       Helper helper = new Helper();
+        Helper helper = new Helper();
         this.quantidade++;
         String matricula = teclado.lerString("Informe a MATRICULA: ");
         String nome = teclado.lerString("Informe o NOME: ");
         
+        Curso curso = helper.validarCurso();
+        if ( curso == null ) return false;
         
         Endereco endereco = helper.preencherEndereco();
         
-        Agenda telefone = helper.preencherAgenda();     
-        
-        Curso curso = helper.validarCurso();
+        Agenda telefone = helper.preencherAgenda();       
         
         Aluno aluno = new Aluno( matricula, nome, endereco, telefone, curso );        
 

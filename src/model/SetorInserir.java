@@ -7,7 +7,7 @@ import view.ItensDoMenu;
  * @author Deyvidy
  */
 public class SetorInserir extends ItensDoMenu{
-    private int quantidade;
+    private int quantidade = 1;
 
     @Override
     public String descricao() {
@@ -16,16 +16,15 @@ public class SetorInserir extends ItensDoMenu{
 
     @Override
     public boolean executar() {
-        this.quantidade++;
         String nome = teclado.lerString("NOME: ");
-        int id = quantidade;        
+        int id =+ quantidade;        
         
         Setor aluno = new Setor( nome, id );        
 
         setorDao.inserir(aluno);
 
         System.out.println("SETOR cadastrado com sucesso!");
-
+        this.quantidade++;
         return false;
     }
     

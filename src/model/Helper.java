@@ -12,13 +12,18 @@ public class Helper extends ItensDoMenu {
     public Curso validarCurso( ){
         boolean ok = true;
         Curso curso = null;
-        
+        int tentativas = 0;
+       
         while ( ok ) {
             String nomeCurso = teclado.lerString("Informe o CURSO: ");        
             curso  = (Curso) cursoDao.pesquisar(nomeCurso);
             
                 if ( curso == null ) {
-                    System.out.println("CURSO não encontrado...");            
+                    tentativas++;
+                    System.out.println("CURSO não encontrado..." + "tentativa: " + tentativas);
+                    if (tentativas == 3){
+                        break;
+                    }
                 } else {
                     ok = false;
                     break;                
@@ -30,19 +35,47 @@ public class Helper extends ItensDoMenu {
     public Escolas validarEscolas( ){
         boolean ok = true;
         Escolas escola = null;
+        int tentativas = 0;
         
         while ( ok ) {
             String nomeEscola = teclado.lerString("Informe a ESCOLA: ");
             escola  = (Escolas) escolaDao.pesquisar(nomeEscola);
             
                 if ( escola == null ) {
-                    System.out.println("ESCOLA não encontrada...");          
+                    tentativas++;
+                    System.out.println("ESCOLA não encontrada..." + "tentativa: " + tentativas);
+                    if (tentativas == 3){
+                        break;
+                    }
                 } else {
                     ok = false;
                     break;                
                 }
         }
         return escola;
+    }
+    
+     public Setor validarSetor( ){
+        boolean ok = true;
+        Setor setor = null;
+        int tentativas = 0;
+        
+        while ( ok ) {
+            String nomeEscola = teclado.lerString("Informe o Setor: ");
+            setor  = (Setor) setorDao.pesquisar(nomeEscola);
+            
+                if ( setor == null ) {
+                    tentativas++;
+                    System.out.println("SETOR não encontradp..." + "tentativa: " + tentativas);
+                    if (tentativas == 3){
+                        break;
+                    }
+                } else {
+                    ok = false;
+                    break;                
+                }
+        }
+        return setor;
     }
     
     public Endereco preencherEndereco(){
@@ -77,6 +110,18 @@ public class Helper extends ItensDoMenu {
         
         return telefone;
     }
+    
+    public Data preencherDataAdmissao(){
+        System.out.println("Data da ADMISSAO: ");
+        
+        int dia = teclado.lerInt("DIA: ");
+        int mes = teclado.lerInt("MES: ");
+        int ano = teclado.lerInt("ANO: ");
+        
+        Data data = new Data(dia,mes,ano);    
+        
+        return data;
+    }
 
     @Override
     public String descricao() {
@@ -85,6 +130,6 @@ public class Helper extends ItensDoMenu {
 
     @Override
     public boolean executar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 }
