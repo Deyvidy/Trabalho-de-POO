@@ -17,7 +17,7 @@ public class SetorExcluir extends ItensDoMenu{
     @Override
     public boolean executar() {
         int id = teclado.lerInt("ID: ");
-        Setor setor = setorDao.pesquisar(id);
+        Setor setor = (Setor) setorDao.pesquisar(id);
 
         if ( setor == null) {
             System.out.println("SETOR não encontrado!");

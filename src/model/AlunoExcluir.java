@@ -17,7 +17,7 @@ public class AlunoExcluir extends ItensDoMenu{
     @Override
     public boolean executar() {
         String matricula = teclado.lerString("MATRICULA: ");
-        Aluno aluno = alunoDao.pesquisar(matricula);
+        Aluno aluno = (Aluno) alunoDao.pesquisar(matricula);
 
         if ( aluno == null) {
             System.out.println("ALUNO não encontrada!");

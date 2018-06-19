@@ -7,7 +7,7 @@ import model.Aluno;
  *
  * @author Deyvidy
  */
-public class AlunoDao implements InterfaceAlunoDao{
+public class AlunoDao implements InterfaceDao<Aluno>{
     protected static ArrayList<Aluno> bancoDeDados = new ArrayList<>();
     
     public void inserir(Aluno elemento) {
@@ -42,6 +42,11 @@ public class AlunoDao implements InterfaceAlunoDao{
     
     public void remover(Aluno elemento) {
         bancoDeDados.remove(elemento);
+    }
+
+    @Override
+    public Aluno pesquisar(int param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 

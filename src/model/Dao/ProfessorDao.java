@@ -3,7 +3,7 @@ package model.Dao;
 import java.util.ArrayList;
 import model.Professor;
 
-public class ProfessorDao implements InterfaceProfessorDao{
+public class ProfessorDao implements InterfaceDao<Professor>{
     protected static ArrayList<Professor> bancoDeDados = new ArrayList<>();
 
     public void inserir(Professor aluno) {
@@ -40,6 +40,11 @@ public class ProfessorDao implements InterfaceProfessorDao{
 
     public void remover(Professor elemento) {
             bancoDeDados.remove(elemento);
+    }
+
+    @Override
+    public Professor pesquisar(int param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -17,7 +17,7 @@ public class CursoAlterar extends ItensDoMenu{
     public boolean executar() {
         Helper helper = new Helper();
         int id = teclado.lerInt("Informe o ID: ");
-        Curso curso = cursoDao.pesquisar(id);
+        Curso curso = (Curso) cursoDao.pesquisar(id);
 
         if (curso == null) {
             System.out.println("CURSO não encontrado!");

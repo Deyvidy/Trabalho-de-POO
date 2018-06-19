@@ -8,7 +8,7 @@ import model.Turmas;
  * @author Deyvidy
  */
 
-public class TurmasDao implements InterfaceTurmasDao{
+public class TurmasDao implements InterfaceDao<Turmas>{
     protected static ArrayList<Turmas> bancoDeDados = new ArrayList<>();
     
     public void inserir(Turmas elemento) {
@@ -43,5 +43,10 @@ public class TurmasDao implements InterfaceTurmasDao{
     
     public void remover(Turmas elemento) {
         bancoDeDados.remove(elemento);
+    }
+
+    @Override
+    public Turmas pesquisar(String param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

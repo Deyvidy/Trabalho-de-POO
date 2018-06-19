@@ -15,7 +15,7 @@ public class Helper extends ItensDoMenu {
         
         while ( ok ) {
             String nomeCurso = teclado.lerString("Informe o CURSO: ");        
-            curso  = cursoDao.pesquisar(nomeCurso);
+            curso  = (Curso) cursoDao.pesquisar(nomeCurso);
             
                 if ( curso == null ) {
                     System.out.println("CURSO não encontrado...");            
@@ -33,7 +33,7 @@ public class Helper extends ItensDoMenu {
         
         while ( ok ) {
             String nomeEscola = teclado.lerString("Informe a ESCOLA: ");
-            escola  = escolaDao.pesquisar(nomeEscola);
+            escola  = (Escolas) escolaDao.pesquisar(nomeEscola);
             
                 if ( escola == null ) {
                     System.out.println("ESCOLA não encontrada...");          

@@ -12,7 +12,7 @@ import model.Disciplina;
  *
  * @author Deyvidy
  */
-public class DisciplinasDao implements InterfaceDisciplinaDao{
+public class DisciplinasDao implements InterfaceDao<Disciplina>{
     protected static ArrayList<Disciplina> bancoDeDados = new ArrayList<>();
     
     public void inserir(Disciplina elemento) {
@@ -47,5 +47,10 @@ public class DisciplinasDao implements InterfaceDisciplinaDao{
     
     public void remover(Disciplina elemento) {
         bancoDeDados.remove(elemento);
+    }
+
+    @Override
+    public Disciplina pesquisar(String param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

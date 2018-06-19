@@ -16,7 +16,7 @@ public class AdminstrativoAlterar extends ItensDoMenu{
     @Override
     public boolean executar() {
         int id = teclado.lerInt("Informe o Id: ");
-        Escolas escolas = escolaDao.pesquisar(id);
+        Escolas escolas = (Escolas) escolaDao.pesquisar(id);
 
         if (escolas == null) {
             System.out.println("Setor não encontrado!");

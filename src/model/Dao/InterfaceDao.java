@@ -12,7 +12,7 @@ public interface InterfaceDao<Objeto> {
 
     public Objeto pesquisar(String param);
 
-    public Objeto pesquisar(Integer param);
+    public Objeto pesquisar(int param);
 
     public ArrayList<Objeto> listar();
 

@@ -12,7 +12,7 @@ import model.Setor;
  *
  * @author Deyvidy
  */
-public class SetorDao implements InterfaceSetorDao {
+public class SetorDao implements InterfaceDao<Setor> {
     protected static ArrayList<Setor> bancoDeDados = new ArrayList<>();
     
     public void inserir(Setor elemento) {
@@ -57,5 +57,10 @@ public class SetorDao implements InterfaceSetorDao {
     
     public void remover(Setor elemento) {
         bancoDeDados.remove(elemento);
+    }
+
+    @Override
+    public Setor pesquisar(String param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

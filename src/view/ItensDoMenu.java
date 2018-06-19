@@ -8,6 +8,7 @@ import model.Dao.EscolaDao;
 import model.Dao.InterfaceAdministracaoDao;
 import model.Dao.InterfaceAlunoDao;
 import model.Dao.InterfaceCursoDao;
+import model.Dao.InterfaceDao;
 import model.Dao.InterfaceDisciplinaDao;
 import model.Dao.InterfaceEscolaDao;
 import model.Dao.InterfaceProfessorDao;
@@ -24,14 +25,14 @@ import model.Dao.TurmasDao;
 public abstract class ItensDoMenu {    
     
     protected Teclado teclado;
-    protected InterfaceAdministracaoDao administracaoDao;
-    protected InterfaceAlunoDao alunoDao; 
-    protected InterfaceCursoDao cursoDao;
-    protected InterfaceDisciplinaDao disciplinaDao;
-    protected InterfaceEscolaDao escolaDao;
-    protected InterfaceProfessorDao professorDao;
-    protected InterfaceSetorDao setorDao;
-    protected InterfaceTurmasDao turmasDao;
+    protected InterfaceDao administracaoDao;
+    protected InterfaceDao alunoDao; 
+    protected InterfaceDao cursoDao;
+    protected InterfaceDao disciplinaDao;
+    protected InterfaceDao escolaDao;
+    protected InterfaceDao professorDao;
+    protected InterfaceDao setorDao;
+    protected InterfaceDao turmasDao;
             
     public ItensDoMenu(){
         teclado = new Teclado();

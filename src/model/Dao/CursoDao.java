@@ -8,7 +8,7 @@ import model.Curso;
  *
  * @author Deyvidy
  */
-public class CursoDao implements InterfaceCursoDao{
+public class CursoDao implements InterfaceDao<Curso>{
     protected static ArrayList<Curso> bancoDeDados = new ArrayList<>();
     
     public void inserir(Curso elemento) {

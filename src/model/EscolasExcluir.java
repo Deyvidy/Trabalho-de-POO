@@ -17,7 +17,7 @@ public class EscolasExcluir extends ItensDoMenu{
     @Override
     public boolean executar() {
         int id = teclado.lerInt("id: ");
-        Escolas escolas = escolaDao.pesquisar(id);
+        Escolas escolas = (Escolas) escolaDao.pesquisar(id);
 
         if ( escolas == null) {
             System.out.println("Escola não encontrada!");

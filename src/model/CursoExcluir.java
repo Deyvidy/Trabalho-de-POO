@@ -17,7 +17,7 @@ public class CursoExcluir extends ItensDoMenu{
     @Override
     public boolean executar() {
         int id = teclado.lerInt("ID: ");
-        Curso curso = cursoDao.pesquisar(id);
+        Curso curso = (Curso) cursoDao.pesquisar(id);
 
         if ( curso == null) {
             System.out.println("CURSO não encontrado!");

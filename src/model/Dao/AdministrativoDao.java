@@ -12,7 +12,7 @@ import model.Administrativo;
  *
  * @author Deyvidy
  */
-public class AdministrativoDao implements InterfaceAdministracaoDao{
+public class AdministrativoDao implements InterfaceDao<Administrativo>{
     
     protected static ArrayList<Administrativo> bancoDeDados = new ArrayList<>();
     
@@ -58,6 +58,11 @@ public class AdministrativoDao implements InterfaceAdministracaoDao{
     
     public void remover(Administrativo elemento) {
         bancoDeDados.remove(elemento);
+    }
+
+    @Override
+    public Administrativo pesquisar(int param) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
