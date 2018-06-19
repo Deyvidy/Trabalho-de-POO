@@ -38,6 +38,21 @@ public class EscolaDao implements InterfaceEscolaDao {
         return resultado;
     }
     
+    public Escolas pesquisar(String elemento) {
+        Escolas resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+                Escolas atual = bancoDeDados.get(i);
+
+                if ( atual.getNome().equals(elemento) ) {
+                    resultado = atual;
+                    break;
+                }
+        }
+
+        return resultado;
+    }
+    
     public void atualizar(Escolas elemento) {
         Escolas pesquisado = pesquisar( elemento.getId());
 

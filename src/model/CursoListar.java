@@ -13,24 +13,25 @@ import view.ItensDoMenu;
  *
  * @author Deyvidy
  */
-public class SetorListar extends ItensDoMenu implements Comparator<Setor>{
+
+public class CursoListar extends ItensDoMenu implements Comparator<Curso>{
 
     @Override
     public String descricao() {
-        return "Listar SETORES em ordem alfabetica";
+        return "Listar CURSOS em ordem alfabetica: ";
     }
 
     @Override
     public boolean executar() {
-        ArrayList<Setor> setor = setorDao.listar();
+        ArrayList<Curso> curso = cursoDao.listar();
 
-        Collections.sort(setor, this);
+        Collections.sort(curso, this);
 
-        for (int i = 0; i < setor.size(); i++) {
-                Setor atual = setor.get(i);
+        for (int i = 0; i < curso.size(); i++) {
+                Curso atual = curso.get(i);
 
                 if (deveImprimir(atual)) {
-                        System.out.println(atual.getId()+ " - " + atual.getNome());
+                    System.out.println(atual.getId()+ " - " + atual.getNome() + " - " + atual.escola.getNome());
                 }
         }
 
@@ -38,12 +39,12 @@ public class SetorListar extends ItensDoMenu implements Comparator<Setor>{
         
     }
     
-    public boolean deveImprimir(Setor setor){
+    public boolean deveImprimir(Curso curso){
         return true;
     }
     
     @Override
-    public int compare(Setor t, Setor t1) {
+    public int compare(Curso t, Curso t1) {
         String nome1 = t.getNome();
         String nome2 = t1.getNome();
 		

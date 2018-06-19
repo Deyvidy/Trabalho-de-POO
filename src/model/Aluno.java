@@ -12,12 +12,12 @@ public class Aluno extends Pessoa {
                     String nome, Endereco endereco,
                     Agenda telefone, Curso curso) {		
 
-            super();
-            this.matricula = matricula;
-            this.nome = nome;
-            this.endereco = endereco;
-            this.telefone = telefone;
-            this.curso = curso;
+        super();
+        this.matricula = matricula;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.curso = curso;
     }
 
     public Curso getCurso() {

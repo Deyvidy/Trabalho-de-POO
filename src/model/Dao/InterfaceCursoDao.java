@@ -13,6 +13,8 @@ public interface InterfaceCursoDao {
     ArrayList<Curso> listar();
 
     Curso pesquisar(int elemento);
+    
+     Curso pesquisar(String elemento);
 
     void atualizar(Curso elemento);
 

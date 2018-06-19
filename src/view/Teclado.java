@@ -7,7 +7,7 @@ import model.Aluno;
  *
  * @author Deyvidy
  */
-public class Teclado <T>{
+public class Teclado {
     private Scanner teclado;
 	
     public Teclado() {

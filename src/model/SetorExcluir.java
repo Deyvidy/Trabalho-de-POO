@@ -11,20 +11,20 @@ public class SetorExcluir extends ItensDoMenu{
 
     @Override
     public String descricao() {
-        return "Excluir O setor";
+        return "Excluir O SETOR";
     }
 
     @Override
     public boolean executar() {
-        int id = teclado.lerInt("id: ");
+        int id = teclado.lerInt("ID: ");
         Setor setor = setorDao.pesquisar(id);
 
         if ( setor == null) {
-            System.out.println("Setor não encontrado!");
+            System.out.println("SETOR não encontrado!");
         }
-        else {
-            
+        else {            
             setorDao.remover(setor);
+            System.out.println("SETOR excluido com sucesso!");
         }
 
         return false;

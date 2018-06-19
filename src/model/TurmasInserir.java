@@ -6,25 +6,25 @@ import view.ItensDoMenu;
  *
  * @author Deyvidy
  */
-public class SetorInserir extends ItensDoMenu{
+public class TurmasInserir extends ItensDoMenu{
     private int quantidade;
 
     @Override
     public String descricao() {
-        return "Cadastra SETOR ";
+        return "Cadastra escolas ";
     }
 
     @Override
     public boolean executar() {
         this.quantidade++;
-        String nome = teclado.lerString("NOME: ");
+        String nome = teclado.lerString("Nome: ");
         int id = quantidade;        
         
-        Setor aluno = new Setor( nome, id );        
+        Escolas escolas = new Escolas( nome, id );        
 
-        setorDao.inserir(aluno);
+        escolaDao.inserir(escolas);
 
-        System.out.println("SETOR cadastrado com sucesso!");
+        System.out.println("Setor cadastrado com sucesso!");
 
         return false;
     }

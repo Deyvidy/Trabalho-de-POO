@@ -13,7 +13,6 @@ public class Curso {
     protected Escolas escola;
 
     public Curso(String nome, Escolas escola) {
-        this.id = id ++;
         this.nome = nome;
         this.escola = escola;
     }   

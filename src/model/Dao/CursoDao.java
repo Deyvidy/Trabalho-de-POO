@@ -34,6 +34,22 @@ public class CursoDao implements InterfaceCursoDao{
         return resultado;
     }
     
+    public Curso pesquisar(String elemento) {
+        Curso resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+                Curso atual = bancoDeDados.get(i);
+
+                if (atual.getNome().equals(elemento)) {
+                        resultado = atual;
+                        break;
+                }
+        }
+
+        return resultado;
+    }
+    
+    
     public void atualizar(Curso elemento) {
         Curso pesquisado = pesquisar( elemento.getId());
 

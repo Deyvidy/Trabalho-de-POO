@@ -17,11 +17,13 @@ public class AdministrativoInserir extends ItensDoMenu{
 
     @Override
     public boolean executar() {
+        Helper helper = null;
         String matricula = teclado.lerString("Matr�cula: ");
         String nome = teclado.lerString("Nome: ");
-        Endereco endereco = new Endereco ();
         
-        Agenda agenda = new Agenda();
+        Endereco endereco = helper.preencherEndereco();
+        
+        Agenda agenda = helper.preencherAgenda();
         
         Data admissao = new Data();
         

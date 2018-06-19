@@ -6,11 +6,11 @@ import view.ItensDoMenu;
  *
  * @author Deyvidy
  */
-public class EscolasAlterar extends ItensDoMenu{
+public class AdminstrativoAlterar extends ItensDoMenu{
 
     @Override
     public String descricao() {
-        return "Alterar dados das ESCOLAS ";
+        return "Alterar dados das escolas ";
     }
 
     @Override
@@ -19,7 +19,7 @@ public class EscolasAlterar extends ItensDoMenu{
         Escolas escolas = escolaDao.pesquisar(id);
 
         if (escolas == null) {
-            System.out.println("ESCOLA não encontrada!");
+            System.out.println("Setor não encontrado!");
         }
         else {
             System.out.println("Id: " + escolas.getId());
