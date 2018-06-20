@@ -14,7 +14,8 @@ public class Disciplina {
     protected String nome;
     protected ArrayList<Curso> cursos = new ArrayList<>();
 
-    public Disciplina(String nome) {
+    public Disciplina(int id, String nome) {
+        this.id = id;
         this.nome = nome;
     }   
 

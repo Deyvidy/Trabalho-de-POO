@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import model.Escolas;
 import view.ItensDoMenu;
 
 /**
@@ -12,57 +11,53 @@ import view.ItensDoMenu;
  */
 
 public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
-    private int quantidade;
-        
+            
     @Override
     public boolean inserir(){
-        this.quantidade++;
+       
         String nome = teclado.lerString("NOME: ");
-        int id = quantidade;        
+        int id = Id.getIdEscola();
         
         Escolas escolas = new Escolas( nome, id );        
 
         escolaDao.inserir(escolas);
 
-        System.out.println("ESCOLA cadastrada com sucesso!");
+        System.out.println("ESCOLA cadastrada com sucesso!" + "ID - " + escolas.getId());
 
         return false;
     }
     
     @Override
     public boolean alterar(){
-        int id = teclado.lerInt("Informe o Id: ");
+        int id = teclado.lerInt("Informe o ID: ");
         Escolas escolas = (Escolas) escolaDao.pesquisar(id);
 
         if (escolas == null) {
             System.out.println("ESCOLA não encontrada!");
         }
         else {
-            System.out.println("Id: " + escolas.getId());
-            System.out.println("Nome: " + escolas.getNome());            
+            System.out.println("ID: " + escolas.getId());
+            System.out.println("NOME: " + escolas.getNome());            
 
-            String nome = teclado.lerString("Novo nome: ");            
-
+            String nome = teclado.lerString("Novo NOME: ");
             escolas.setNome(nome);            
 
-            escolaDao.atualizar(escolas);
-            
+            escolaDao.atualizar(escolas);            
         }
-
         return false;
     }
     
     @Override
     public boolean remover(){
-        int id = teclado.lerInt("id: ");
+        int id = teclado.lerInt("ID: ");
         Escolas escolas = (Escolas) escolaDao.pesquisar(id);
 
         if ( escolas == null) {
-            System.out.println("Escola não encontrada!");
+            System.out.println("ESCOLA não encontrada!");
         }
-        else {
-           
+        else {           
             escolaDao.remover(escolas);
+            System.out.println("ESCOLA removida com sucesso!");
         }
 
         return false;
@@ -78,7 +73,12 @@ public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
                 Escolas atual = escolas.get(i);
 
                 if (deveImprimir(atual)) {
-                    System.out.println(atual.getId()+ " - " + atual.getNome());
+                    System.out.println("ID: " + atual.getId());
+                    System.out.println("NOME: " + atual.getNome());
+                    for(int j = 0; j < atual.getProfessoresQueLecionam().size(); j++) {
+                        System.out.println("PROFESSOR: " + atual.getProfessoresQueLecionam().get(j).getNome());
+                    }                
+                    System.out.println("===================");
                 }
         }
 

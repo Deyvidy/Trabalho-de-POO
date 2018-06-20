@@ -3,8 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import model.Dao.SetorDao;
-import model.Setor;
 import view.ItensDoMenu;
 
 /**
@@ -13,21 +11,19 @@ import view.ItensDoMenu;
  */
 
 public class SetorActions extends ItensDoMenu implements Comparator<Setor> {
-    private int quantidade;
-    
-    public boolean inserir(){
-        String nome = teclado.lerString("NOME: ");
-        int id =+ quantidade;        
         
-        Setor aluno = new Setor( nome, id );        
-
-        setorDao.inserir(aluno);
-
-        System.out.println("SETOR cadastrado com sucesso!");
-        this.quantidade++;
+    @Override
+    public boolean inserir(){        
+        String nome = teclado.lerString("NOME: ");
+        int id = Id.getIdSetor();
+        Setor setor = new Setor( id , nome);
+        
+        setorDao.inserir(setor);
+        System.out.println("SETOR cadastrado com sucesso!" + "ID - " + setor.getId());
         return false;
     }
     
+    @Override
     public boolean alterar(){
         int id = teclado.lerInt("Informe o ID: ");
         Setor setor = (Setor) setorDao.pesquisar(id);
@@ -44,13 +40,14 @@ public class SetorActions extends ItensDoMenu implements Comparator<Setor> {
             setor.setNome(nome);            
 
             setorDao.atualizar(setor);
-            
+            System.out.println("SETOR alterado com sucesso!");
         }
 
         return false;
        
     }
     
+    @Override
     public boolean remover(){
         int id = teclado.lerInt("ID: ");
         Setor setor = (Setor) setorDao.pesquisar(id);
@@ -66,6 +63,7 @@ public class SetorActions extends ItensDoMenu implements Comparator<Setor> {
         return false;
     }
     
+    @Override
     public boolean listar(){
          ArrayList<Setor> setor = setorDao.listar();
 
@@ -94,5 +92,6 @@ public class SetorActions extends ItensDoMenu implements Comparator<Setor> {
 		
         return nome1.compareTo(nome2);
     }
+      
     
 }

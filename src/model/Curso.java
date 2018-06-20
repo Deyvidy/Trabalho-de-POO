@@ -12,7 +12,8 @@ public class Curso {
     protected String nome;
     protected Escolas escola;
 
-    public Curso(String nome, Escolas escola) {
+    public Curso(int id,String nome, Escolas escola) {
+        this.id = id;
         this.nome = nome;
         this.escola = escola;
     }   

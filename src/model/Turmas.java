@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /*
 * O sistema deverá permitir o cadastro/atualização de turmas, armazenando/modificando as
 * seguintes informações: código, nome, disciplina (escolhida de uma lista), professor (escolhido de
@@ -8,11 +11,19 @@ package model;
 */
 
 public class Turmas {
+    Random random = new Random();
     protected int id;
     protected String nome;
     protected Disciplina disciplina;
-    
+    protected Professor professor;
+    protected ArrayList<Aluno> Alunos = new ArrayList<>();
 
+    public Turmas(String nome, Disciplina disciplina, Professor professor) {
+        this.id = random.hashCode();
+        this.nome = nome;
+        this.disciplina = disciplina;
+        this.professor = professor;
+    } 
     public int getId() {
         return id;
     }
@@ -35,6 +46,22 @@ public class Turmas {
 
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
+    public ArrayList<Aluno> getAlunos() {
+        return Alunos;
+    }
+
+    public void setAlunos(ArrayList<Aluno> Alunos) {
+        this.Alunos = Alunos;
     }
     
     

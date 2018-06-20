@@ -11,15 +11,13 @@ import view.ItensDoMenu;
  */
 
 public class DisciplinaActions extends ItensDoMenu implements Comparator<Disciplina> {
-    private int quantidade;
-        
+            
     public boolean inserir(){
-        this.quantidade++;
-                
+                        
         String nome = teclado.lerString("Nome: ");
-        int id = quantidade; 
+        int id = Id.getIdDisciplina();
         
-        Disciplina disciplina = new Disciplina( nome );        
+        Disciplina disciplina = new Disciplina( id, nome );        
 
         disciplinaDao.inserir(disciplina);
 

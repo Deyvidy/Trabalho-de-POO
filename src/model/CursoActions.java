@@ -3,9 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import model.Curso;
-import model.Escolas;
-import model.Helper;
 import view.ItensDoMenu;
 
 /**
@@ -14,19 +11,18 @@ import view.ItensDoMenu;
  */
 
 public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
-    private int quantidade;
-        
+            
+    @Override
     public boolean inserir(){
-        this.quantidade++;
         Helper helper = new Helper();
         
         String nome = teclado.lerString("Nome: ");
-        int id = quantidade;
+        int id = Id.getIdCurso();
         
         Escolas escola = helper.validarEscolas();
         if (escola == null) return false;
         
-        Curso curso = new Curso( nome, escola );        
+        Curso curso = new Curso( id, nome, escola );        
 
         cursoDao.inserir(curso);
 
@@ -35,6 +31,7 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
         return false;
     }
     
+    @Override
     public boolean alterar(){
         Helper helper = new Helper();
         int id = teclado.lerInt("Informe o ID: ");
@@ -61,6 +58,7 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
         return false;
     }
     
+    @Override
     public boolean remover(){
         int id = teclado.lerInt("ID: ");
         Curso curso = (Curso) cursoDao.pesquisar(id);
@@ -75,6 +73,7 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
         return false;
     }
     
+    @Override
     public boolean listar(){
          ArrayList<Curso> curso = cursoDao.listar();
 

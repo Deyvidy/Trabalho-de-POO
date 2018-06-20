@@ -3,8 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import model.Dao.SetorDao;
-import model.Escolas;
 import view.ItensDoMenu;
 
 /**
@@ -13,13 +11,10 @@ import view.ItensDoMenu;
  */
 
 public class TurmasActions extends ItensDoMenu implements Comparator<Escolas> {
-    private int quantidade;
-        
+            
     public boolean inserir(){
-        this.quantidade++;
         String nome = teclado.lerString("Nome: ");
-        int id = quantidade;        
-        
+        int id = Id.getIdTurmas();
         Escolas escolas = new Escolas( nome, id );        
 
         escolaDao.inserir(escolas);

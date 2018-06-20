@@ -11,14 +11,12 @@ import view.ItensDoMenu;
  */
 
 public class ProfessorActions extends ItensDoMenu implements Comparator<Professor> {
-    private int quantidade;
-        
+            
     @Override
     public boolean inserir(){
         Helper helper = new Helper();
-        this.quantidade++;
-        
-        String matricula = teclado.lerString("Informe a MATRICULA: ");
+                
+        String matricula = Integer.toString(Id.getIdProfessor());
         String nome = teclado.lerString("Informe o NOME: ");        
         float salario = (float) teclado.lerDouble("Informe o SALARIO: ");              
         

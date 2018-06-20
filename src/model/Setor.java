@@ -1,5 +1,6 @@
 package model;
 
+
 /*
 * O sistema deverá permitir o cadastro/atualização de aluno, armazenando/modificando as
 * seguintes informações: id, nome. O sistema deve permitir a exclusão do cadastro através da
@@ -11,14 +12,10 @@ public class Setor {
     private String nome;
     
     public Setor(){};
-    
-    public Setor( int id ){
-        this(null, id);
-    }
-    
-    public Setor(String nome, int id) {
-        this.nome = nome;
+            
+    public Setor(int id, String nome) {
         this.id = id;
+        this.nome = nome;        
     }
 
     public int getId() {

@@ -11,13 +11,12 @@ import view.ItensDoMenu;
  */
 
 public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
-        private int quantidade;
-        
+               
         @Override
     public boolean inserir(){
         Helper helper = new Helper();
-        this.quantidade++;
-        String matricula = teclado.lerString("Informe a MATRICULA: ");
+       
+        String matricula = Integer.toString(Id.getIdAluno());
         String nome = teclado.lerString("Informe o NOME: ");
         
         Curso curso = helper.validarCurso();

@@ -12,7 +12,8 @@ public class Escolas {
     private int id;
     private String nome;
     private ArrayList<Professor> professoresQueLecionam = new ArrayList<>();
-
+    
+    
     public Escolas(int id) {
         this.id = id;
     }   

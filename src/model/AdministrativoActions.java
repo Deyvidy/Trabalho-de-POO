@@ -16,7 +16,7 @@ public class AdministrativoActions extends ItensDoMenu implements Comparator<Adm
      @Override
     public boolean inserir(){
         Helper helper = new Helper();
-        String matricula = teclado.lerString("MATRICULA: ");
+        String matricula = Integer.toString(Id.getIdAdministrativo());
         String nome = teclado.lerString("NOME: ");
         
         Setor setor = helper.validarSetor();
