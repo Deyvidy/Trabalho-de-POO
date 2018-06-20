@@ -15,14 +15,17 @@ import model.Escolas;
 public class EscolaDao implements InterfaceDao<Escolas>{
     protected static ArrayList<Escolas> bancoDeDados = new ArrayList<>();
     
+    @Override
     public void inserir(Escolas elemento) {
         bancoDeDados.add(elemento);
     }
    
+    @Override
     public ArrayList<Escolas> listar() {
         return bancoDeDados;
     }
     
+    @Override
     public Escolas pesquisar(int elemento) {
         Escolas resultado = null;
 
@@ -38,6 +41,7 @@ public class EscolaDao implements InterfaceDao<Escolas>{
         return resultado;
     }
     
+    @Override
     public Escolas pesquisar(String elemento) {
         Escolas resultado = null;
 
@@ -53,6 +57,7 @@ public class EscolaDao implements InterfaceDao<Escolas>{
         return resultado;
     }
     
+    @Override
     public void atualizar(Escolas elemento) {
         Escolas pesquisado = pesquisar( elemento.getId());
 
@@ -60,6 +65,7 @@ public class EscolaDao implements InterfaceDao<Escolas>{
         
     }
     
+    @Override
     public void remover(Escolas elemento) {
         bancoDeDados.remove(elemento);
     }

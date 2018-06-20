@@ -34,6 +34,22 @@ public class TurmasDao implements InterfaceDao<Turmas>{
         return resultado;
     }
     
+    @Override
+    public Turmas pesquisar(String elemento) {
+        Turmas resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+                Turmas atual = bancoDeDados.get(i);
+
+                if (atual.getNome().equals(elemento)) {
+                        resultado = atual;
+                        break;
+                }
+        }
+
+        return resultado;
+    }
+    
     public void atualizar(Turmas elemento) {
         Turmas pesquisado = pesquisar( elemento.getId());
 
@@ -45,8 +61,4 @@ public class TurmasDao implements InterfaceDao<Turmas>{
         bancoDeDados.remove(elemento);
     }
 
-    @Override
-    public Turmas pesquisar(String param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

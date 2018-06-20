@@ -15,14 +15,17 @@ import model.Disciplina;
 public class DisciplinasDao implements InterfaceDao<Disciplina>{
     protected static ArrayList<Disciplina> bancoDeDados = new ArrayList<>();
     
+    @Override
     public void inserir(Disciplina elemento) {
         bancoDeDados.add(elemento);
     }
    
+    @Override
     public ArrayList<Disciplina> listar() {
         return bancoDeDados;
     }
     
+    @Override
     public Disciplina pesquisar(int elemento) {
         Disciplina resultado = null;
 
@@ -38,6 +41,23 @@ public class DisciplinasDao implements InterfaceDao<Disciplina>{
         return resultado;
     }
     
+    @Override
+    public Disciplina pesquisar(String elemento) {
+        Disciplina resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+                Disciplina atual = bancoDeDados.get(i);
+
+                if (atual.getNome().equals(elemento)) {
+                        resultado = atual;
+                        break;
+                }
+        }
+
+        return resultado;
+    }
+    
+    @Override
     public void atualizar(Disciplina elemento) {
         Disciplina pesquisado = pesquisar( elemento.getId());
 
@@ -45,12 +65,9 @@ public class DisciplinasDao implements InterfaceDao<Disciplina>{
         
     }
     
+    @Override
     public void remover(Disciplina elemento) {
         bancoDeDados.remove(elemento);
     }
 
-    @Override
-    public Disciplina pesquisar(String param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

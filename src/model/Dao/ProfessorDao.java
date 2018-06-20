@@ -6,16 +6,19 @@ import model.Professor;
 public class ProfessorDao implements InterfaceDao<Professor>{
     protected static ArrayList<Professor> bancoDeDados = new ArrayList<>();
 
+    @Override
     public void inserir(Professor aluno) {
         bancoDeDados.add(aluno);
     }
 
     
+    @Override
     public ArrayList<Professor> listar() {
         return bancoDeDados;
     }
 
 
+    @Override
     public Professor pesquisar(String elemento) {
         Professor resultado = null;
 
@@ -32,12 +35,14 @@ public class ProfessorDao implements InterfaceDao<Professor>{
     }
 
 
+    @Override
     public void atualizar(Professor elemento) {
         Professor pesquisado = pesquisar(elemento.getMatricula());
 
         pesquisado.setNome(elemento.getNome());           
     }
 
+    @Override
     public void remover(Professor elemento) {
             bancoDeDados.remove(elemento);
     }

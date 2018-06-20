@@ -15,14 +15,17 @@ import model.Setor;
 public class SetorDao implements InterfaceDao<Setor> {
     protected static ArrayList<Setor> bancoDeDados = new ArrayList<>();
     
+    @Override
     public void inserir(Setor elemento) {
         bancoDeDados.add(elemento);
     }
    
+    @Override
     public ArrayList<Setor> listar() {
         return bancoDeDados;
     }
     
+    @Override
     public Setor pesquisar(int elemento) {
         Setor resultado = null;
 
@@ -30,6 +33,22 @@ public class SetorDao implements InterfaceDao<Setor> {
                 Setor atual = bancoDeDados.get(i);
 
                 if (atual.getId()==elemento) {
+                        resultado = atual;
+                        break;
+                }
+        }
+
+        return resultado;
+    }
+    
+    @Override
+    public Setor pesquisar(String elemento) {
+        Setor resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+                Setor atual = bancoDeDados.get(i);
+
+                if (atual.getNome().equals(elemento)) {
                         resultado = atual;
                         break;
                 }
@@ -48,6 +67,7 @@ public class SetorDao implements InterfaceDao<Setor> {
         return setor;
     }
     
+    @Override
     public void atualizar(Setor elemento) {
         Setor pesquisado = pesquisar( elemento.getId());
 
@@ -55,12 +75,9 @@ public class SetorDao implements InterfaceDao<Setor> {
         
     }
     
+    @Override
     public void remover(Setor elemento) {
         bancoDeDados.remove(elemento);
     }
 
-    @Override
-    public Setor pesquisar(String param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
