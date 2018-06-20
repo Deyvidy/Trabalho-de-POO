@@ -3,13 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import model.Administrativo;
-import model.Agenda;
-import model.Dao.SetorDao;
-import model.Data;
-import model.Endereco;
-import model.Helper;
-import model.Setor;
 import view.ItensDoMenu;
 
 /**

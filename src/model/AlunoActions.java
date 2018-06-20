@@ -41,6 +41,7 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
     }
     
     public boolean alterar(){
+        Helper helper = new Helper();
         String matricula = teclado.lerString("Informe a MATRICULA: ");
         Aluno aluno =  (Aluno) alunoDao.pesquisar(matricula);
 
@@ -50,7 +51,8 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
         else {
             System.out.println("===================");
             System.out.println("MATRICULA: " + aluno.getMatricula());
-            System.out.println("NOME: " + aluno.getNome()); 
+            System.out.println("NOME: " + aluno.getNome());
+            System.out.println("CURSO: " + aluno.getCurso().getNome()); 
             System.out.println("PAIS: " + aluno.getEndereco().getPais());
             System.out.println("ESTADO: " + aluno.getEndereco().getEstado());
             System.out.println("CIDADE: " + aluno.getEndereco().getCidade());   
@@ -61,13 +63,30 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
             System.out.println("TELEFONE: " + aluno.getTelefone().getNumero());
             System.out.println("E-MAIL: " + aluno.getTelefone().getEmail());
             System.out.println("===================");
+                        
+            String nome = teclado.lerString("Novo NOME: ");
+            aluno.setNome(nome);
             
-            String nome = teclado.lerString("Novo NOME: "); 
+            String opCurso = teclado.lerString("Deseja altera o CURSO? [S]- SIM [N] - NÃO: ");  
+            if( "S".equals(opCurso) || "s".equals(opCurso) ){
+                Curso curso = helper.validarCurso();
+                aluno.setCurso(curso);
+            }            
             
-            aluno.setNome(nome);            
+            String opEndereco = teclado.lerString("Deseja altera o ENDERECO? [S]- SIM [N] - NÃO: ");            
+            if( "S".equals(opEndereco) || "s".equals(opEndereco) ){
+                Endereco endereco = helper.preencherEndereco();
+                aluno.setEndereco(endereco);
+            }
             
-            escolaDao.atualizar(aluno);
+            String opTelefone = teclado.lerString("Deseja altera os dados para CONTATO? [S]- SIM [N] - NÃO: ");
+            if( "S".equals(opTelefone) || "s".equals(opTelefone) ){
+                Agenda telefone = helper.preencherAgenda(); 
+                aluno.setTelefone(telefone);
+            }  
             
+            alunoDao.atualizar(aluno);
+            System.out.println("Alteraçoes efetuadas com sucesso!");
         }
 
         return false;
@@ -95,19 +114,20 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
         for (int i = 0; i < aluno.size(); i++) {
                 Aluno atual = aluno.get(i);
 
-                if (deveImprimir(atual)) {
-                        System.out.println(atual.getMatricula()+ " - " + atual.getNome()
-                                + " - " + atual.getCurso().getNome() + "\n" 
-                                + " - " + atual.getEndereco().getPais()
-                                + " - " + atual.getEndereco().getEstado()
-                                + " - " + atual.getEndereco().getCidade()
-                                + " - " + atual.getEndereco().getBairro()
-                                + " - " + atual.getEndereco().getCep()
-                                + " - " + atual.getEndereco().getRua()
-                                + " - " + atual.getEndereco().getNumero() + "\n"
-                                + " - " + atual.getTelefone().getNumero()
-                                + " - " + atual.getTelefone().getEmail()
-                        );
+                if (deveImprimir(atual)) {                        
+                        System.out.println("MATRICULA: " + atual.getMatricula());
+                        System.out.println("NOME: " + atual.getNome());
+                        System.out.println("CURSO: " + atual.getCurso().getNome()); 
+                        System.out.println("PAIS: " + atual.getEndereco().getPais());
+                        System.out.println("ESTADO: " + atual.getEndereco().getEstado());
+                        System.out.println("CIDADE: " + atual.getEndereco().getCidade());   
+                        System.out.println("BAIRRO: " + atual.getEndereco().getBairro());          
+                        System.out.println("CEP: " + atual.getEndereco().getCep());          
+                        System.out.println("RUA: " + atual.getEndereco().getRua());          
+                        System.out.println("Nº RESIDENCIA: " + atual.getEndereco().getNumero());
+                        System.out.println("TELEFONE: " + atual.getTelefone().getNumero());
+                        System.out.println("E-MAIL: " + atual.getTelefone().getEmail());
+                        System.out.println("===================");
                 }
         }
 

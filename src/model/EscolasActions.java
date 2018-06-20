@@ -16,14 +16,14 @@ public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
         
     public boolean inserir(){
         this.quantidade++;
-        String nome = teclado.lerString("Nome: ");
+        String nome = teclado.lerString("NOME: ");
         int id = quantidade;        
         
         Escolas escolas = new Escolas( nome, id );        
 
         escolaDao.inserir(escolas);
 
-        System.out.println("Setor cadastrado com sucesso!");
+        System.out.println("ESCOLA cadastradA com sucesso!");
 
         return false;
     }

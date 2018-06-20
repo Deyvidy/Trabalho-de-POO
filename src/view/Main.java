@@ -57,19 +57,20 @@ public class Main {
         EscolasActions escola = new EscolasActions();
         ProfessorActions professor = new ProfessorActions();
         SetorActions setor = new SetorActions();
-        TurmasActions turmas = new TurmasActions();       
+        TurmasActions turmas = new TurmasActions();
         Voltar voltar = new  Voltar();
                 
         boolean sair = false;
         
             System.out.print("Qual a opção desejada: ");
-            System.out.println("[1] ADMINISTRATIVO "
+            System.out.println("\n[1] ADMINISTRATIVO "
                 + "\n[2] PROFESSORES"
                 + "\n[3] ALUNO  "
                 + "\n[4] SETOR"
                 + "\n[5] TURMA"
                 + "\n[6] CURSO"
                 + "\n[7] DISCIPLINA"
+                + "\n[8] ESCOLA"
                 + "\n[0] SAIR"
             );
             
@@ -104,6 +105,10 @@ public class Main {
                     disciplina.inserir();
                     main(back);
                 break;
+                case 8:
+                    escola.inserir();
+                    main(back);
+                break;
                 case 0:
                     sair = voltar.executar();                  
                 break;
@@ -129,13 +134,14 @@ public class Main {
         boolean sair = false;
         
             System.out.print("Qual a opção desejada: ");
-            System.out.println("[1] PROFESSORES"
-                + "\n[2] ADMINISTRATIVO"
+            System.out.println("\n[1] ADMINISTRATIVO "
+                + "\n[2] PROFESSORES"
                 + "\n[3] ALUNO  "
                 + "\n[4] SETOR"
                 + "\n[5] TURMA"
                 + "\n[6] CURSO"
                 + "\n[7] DISCIPLINA"
+                + "\n[8] ESCOLA"
                 + "\n[0] SAIR"
             );
             
@@ -170,6 +176,10 @@ public class Main {
                     disciplina.listar();
                     main(back);
                 break;
+                case 8:
+                    escola.listar();
+                    main(back);
+                break;
                 case 0:
                     sair = voltar.executar();                  
                 break;
@@ -196,13 +206,14 @@ public class Main {
         boolean sair = false;
         
             System.out.print("Qual a opção desejada: ");
-            System.out.println("[1] PROFESSORES"
-                + "\n[2] ADMINISTRATIVO"
+            System.out.println("\n[1] ADMINISTRATIVO "
+                + "\n[2] PROFESSORES"
                 + "\n[3] ALUNO  "
                 + "\n[4] SETOR"
                 + "\n[5] TURMA"
                 + "\n[6] CURSO"
                 + "\n[7] DISCIPLINA"
+                + "\n[8] ESCOLA"
                 + "\n[0] SAIR"
             );
             
@@ -237,6 +248,10 @@ public class Main {
                     disciplina.alterar();
                     main(back);
                 break;
+                case 8:
+                    escola.alterar();
+                    main(back);
+                break;
                 case 0:
                     sair = voltar.executar();                  
                 break;
@@ -262,13 +277,14 @@ public class Main {
         boolean sair = false;
         
             System.out.print("Qual a opção desejada: ");
-            System.out.println("[1] PROFESSORES"
-                + "\n[2] ADMINISTRATIVO"
+            System.out.println("\n[1] ADMINISTRATIVO "
+                + "\n[2] PROFESSORES"
                 + "\n[3] ALUNO  "
                 + "\n[4] SETOR"
                 + "\n[5] TURMA"
                 + "\n[6] CURSO"
                 + "\n[7] DISCIPLINA"
+                + "\n[8] ESCOLA"
                 + "\n[0] SAIR"
             );
             
@@ -302,6 +318,10 @@ public class Main {
                 break;
                 case 7:
                     disciplina.remover();
+                    main(back);
+                break;
+                case 8:
+                    escola.remover();
                     main(back);
                 break;
                 case 0:
