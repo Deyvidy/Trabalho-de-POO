@@ -38,7 +38,9 @@ public abstract class ItensDoMenu {
         turmasDao = new TurmasDao();       
     }
         
-    public abstract String descricao();
-    public abstract boolean executar();
+    public abstract boolean inserir();
+    public abstract boolean alterar();
+    public abstract boolean remover();
+    public abstract boolean listar();
     
 }
