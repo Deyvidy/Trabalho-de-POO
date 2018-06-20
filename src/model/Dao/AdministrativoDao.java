@@ -16,14 +16,17 @@ public class AdministrativoDao implements InterfaceDao<Administrativo>{
     
     protected static ArrayList<Administrativo> bancoDeDados = new ArrayList<>();
     
+    @Override
     public void inserir(Administrativo elemento) {
         bancoDeDados.add(elemento);
     }
    
+    @Override
     public ArrayList<Administrativo> listar() {
         return bancoDeDados;
     }
     
+    @Override
     public Administrativo pesquisar(String elemento) {
         Administrativo resultado = null;
 
@@ -37,18 +40,9 @@ public class AdministrativoDao implements InterfaceDao<Administrativo>{
         }
 
         return resultado;
-    }
-    
-    public Administrativo buscarObjeto( String matricula ) {
-        Administrativo administrativo = null;
-        for ( int i = 0; i < this.bancoDeDados.size( ); i++ ) {
-            if( this.bancoDeDados.get(i).getMatricula().equalsIgnoreCase(matricula)) {
-                administrativo = this.bancoDeDados.get(i);
-            }
-        }
-        return administrativo;
-    }
-    
+    }    
+        
+    @Override
     public void atualizar(Administrativo aluno) {
         Administrativo pesquisado = pesquisar( aluno.getMatricula());
 
@@ -56,6 +50,7 @@ public class AdministrativoDao implements InterfaceDao<Administrativo>{
         
     }
     
+    @Override
     public void remover(Administrativo elemento) {
         bancoDeDados.remove(elemento);
     }

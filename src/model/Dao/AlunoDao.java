@@ -10,14 +10,17 @@ import model.Aluno;
 public class AlunoDao implements InterfaceDao<Aluno>{
     protected static ArrayList<Aluno> bancoDeDados = new ArrayList<>();
     
+    @Override
     public void inserir(Aluno elemento) {
         bancoDeDados.add(elemento);
     }
    
+    @Override
     public ArrayList<Aluno> listar() {
         return bancoDeDados;
     }
     
+    @Override
     public Aluno pesquisar(String elemento) {
         Aluno resultado = null;
 
@@ -33,6 +36,7 @@ public class AlunoDao implements InterfaceDao<Aluno>{
         return resultado;
     }
     
+    @Override
     public void atualizar(Aluno aluno) {
         Aluno pesquisado = pesquisar( aluno.getMatricula());
 
@@ -40,6 +44,7 @@ public class AlunoDao implements InterfaceDao<Aluno>{
         
     }
     
+    @Override
     public void remover(Aluno elemento) {
         bancoDeDados.remove(elemento);
     }
