@@ -1,7 +1,5 @@
 package model;
 
-import view.ItensDoMenu;
-
 /*
  * O sistema dever� permitir o cadastro/atualiza��o de funcion�rios administrativos e
  * professores, armazenando/modificando as seguintes informa��es: matr�cula, nome, endere�o,
@@ -10,7 +8,7 @@ import view.ItensDoMenu;
  * sistema deve permitir a exclus�o do cadastro atrav�s da matr�cula.
  */
 
-public class Professor extends Funcionarios {
+public class Professor extends Funcionarios  {
     private Escolas escola;         
     
     public Professor (String matricula ){

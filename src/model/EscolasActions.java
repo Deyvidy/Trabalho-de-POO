@@ -14,6 +14,7 @@ import view.ItensDoMenu;
 public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
     private int quantidade;
         
+    @Override
     public boolean inserir(){
         this.quantidade++;
         String nome = teclado.lerString("NOME: ");
@@ -23,11 +24,12 @@ public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
 
         escolaDao.inserir(escolas);
 
-        System.out.println("ESCOLA cadastradA com sucesso!");
+        System.out.println("ESCOLA cadastrada com sucesso!");
 
         return false;
     }
     
+    @Override
     public boolean alterar(){
         int id = teclado.lerInt("Informe o Id: ");
         Escolas escolas = (Escolas) escolaDao.pesquisar(id);
@@ -50,6 +52,7 @@ public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
         return false;
     }
     
+    @Override
     public boolean remover(){
         int id = teclado.lerInt("id: ");
         Escolas escolas = (Escolas) escolaDao.pesquisar(id);
@@ -65,6 +68,7 @@ public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
         return false;
     }
     
+    @Override
     public boolean listar(){
         ArrayList<Escolas> escolas = escolaDao.listar();
 
