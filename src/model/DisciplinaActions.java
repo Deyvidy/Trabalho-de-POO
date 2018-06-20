@@ -15,6 +15,7 @@ public class DisciplinaActions extends ItensDoMenu implements Comparator<Discipl
     public boolean inserir(){
                         
         String nome = teclado.lerString("Nome: ");
+        
         int id = Id.getIdDisciplina();
         
         Disciplina disciplina = new Disciplina( id, nome );        

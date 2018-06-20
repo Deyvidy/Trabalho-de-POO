@@ -71,6 +71,7 @@ public class Main {
                 + "\n[6] CURSO"
                 + "\n[7] DISCIPLINA"
                 + "\n[8] ESCOLA"
+                + "\n[9] CADASTRA ALUNOS NA TURMA"
                 + "\n[0] SAIR"
             );
             
@@ -107,6 +108,10 @@ public class Main {
                 break;
                 case 8:
                     escola.inserir();
+                    main(back);
+                break;
+                case 9:
+                    turmas.inserirAlunoNaTurma();
                     main(back);
                 break;
                 case 0:

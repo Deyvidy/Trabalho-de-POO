@@ -27,7 +27,23 @@ public class AlunoDao implements InterfaceDao<Aluno>{
         for (int i = 0; i < bancoDeDados.size(); i++) {
                 Aluno atual = bancoDeDados.get(i);
 
-                if (atual.getMatricula().equals(elemento)) {
+                if (atual.getNome().equals(elemento)) {
+                        resultado = atual;
+                        break;
+                }
+        }
+
+        return resultado;
+    }
+    
+    @Override
+    public Aluno pesquisar(int elemento) {
+        Aluno resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+                Aluno atual = bancoDeDados.get(i);
+
+                if (atual.getMatricula() == elemento ) {
                         resultado = atual;
                         break;
                 }
@@ -49,10 +65,6 @@ public class AlunoDao implements InterfaceDao<Aluno>{
         bancoDeDados.remove(elemento);
     }
 
-    @Override
-    public Aluno pesquisar(int param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 
 }

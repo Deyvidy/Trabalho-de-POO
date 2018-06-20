@@ -33,7 +33,7 @@ public class AdministrativoDao implements InterfaceDao<Administrativo>{
         for (int i = 0; i < bancoDeDados.size(); i++) {
                 Administrativo atual = bancoDeDados.get(i);
 
-                if (atual.getMatricula().equals(elemento)) {
+                if (atual.getNome().equals(elemento)) {
                         resultado = atual;
                         break;
                 }
@@ -42,6 +42,22 @@ public class AdministrativoDao implements InterfaceDao<Administrativo>{
         return resultado;
     }    
         
+    @Override
+    public Administrativo pesquisar(int elemento) {
+         Administrativo resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+                Administrativo atual = bancoDeDados.get(i);
+
+                if (atual.getMatricula() == elemento ) {
+                        resultado = atual;
+                        break;
+                }
+        }
+
+        return resultado;
+    }
+    
     @Override
     public void atualizar(Administrativo aluno) {
         Administrativo pesquisado = pesquisar( aluno.getMatricula());
@@ -55,9 +71,5 @@ public class AdministrativoDao implements InterfaceDao<Administrativo>{
         bancoDeDados.remove(elemento);
     }
 
-    @Override
-    public Administrativo pesquisar(int param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

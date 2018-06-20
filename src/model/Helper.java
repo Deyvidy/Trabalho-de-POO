@@ -55,7 +55,7 @@ public class Helper extends ItensDoMenu {
         return escola;
     }
     
-     public Setor validarSetor( ){
+    public Setor validarSetor( ){
         boolean ok = true;
         Setor setor = null;
         int tentativas = 0;
@@ -76,6 +76,75 @@ public class Helper extends ItensDoMenu {
                 }
         }
         return setor;
+    }
+    
+    public Disciplina validarDisciplina( ){
+        boolean ok = true;
+        Disciplina disciplina = null;
+        int tentativas = 0;
+        
+        while ( ok ) {
+            String nomeDisciplina = teclado.lerString("Informe a DISCIPLINA: ");
+            disciplina  = (Disciplina) disciplinaDao.pesquisar(nomeDisciplina);
+            
+                if ( disciplina == null ) {
+                    tentativas++;
+                    System.out.println("DISCIPLINA não encontrada..." + "Tentativa: " + tentativas);
+                    if (tentativas == 3){
+                        break;
+                    }
+                } else {
+                    ok = false;
+                    break;                
+                }
+        }
+        return disciplina;
+    }
+    
+    public Professor validarProfessor( ){
+        boolean ok = true;
+        Professor professor = null;
+        int tentativas = 0;
+        
+        while ( ok ) {
+            String nomeDisciplina = teclado.lerString("Informe o PROFESSOR: ");
+            professor  = (Professor) professorDao.pesquisar(nomeDisciplina);
+            
+                if ( professor == null ) {
+                    tentativas++;
+                    System.out.println("PROFESSOR não encontrado..." + "Tentativa: " + tentativas);
+                    if (tentativas == 3){
+                        break;
+                    }
+                } else {
+                    ok = false;
+                    break;                
+                }
+        }
+        return professor;
+    }
+    
+    public Aluno validarAluno( ){
+        boolean ok = true;
+        Aluno aluno = null;
+        int tentativas = 0;
+        
+        while ( ok ) {
+            String nomeDisciplina = teclado.lerString("Informe o ALUNO: ");
+            aluno  = (Aluno) alunoDao.pesquisar(nomeDisciplina);
+            
+                if ( aluno == null ) {
+                    tentativas++;
+                    System.out.println("ALUNO não encontrado..." + "Tentativa: " + tentativas);
+                    if (tentativas == 3){
+                        break;
+                    }
+                } else {
+                    ok = false;
+                    break;                
+                }
+        }
+        return aluno;
     }
     
     public Endereco preencherEndereco(){

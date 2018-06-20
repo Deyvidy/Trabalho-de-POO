@@ -16,7 +16,6 @@ public class ProfessorActions extends ItensDoMenu implements Comparator<Professo
     public boolean inserir(){
         Helper helper = new Helper();
                 
-        String matricula = Integer.toString(Id.getIdProfessor());
         String nome = teclado.lerString("Informe o NOME: ");        
         float salario = (float) teclado.lerDouble("Informe o SALARIO: ");              
         
@@ -28,6 +27,8 @@ public class ProfessorActions extends ItensDoMenu implements Comparator<Professo
         Agenda telefone = helper.preencherAgenda();     
                 
         Data data = helper.preencherDataAdmissao();        
+        
+        int matricula = Id.getIdProfessor();
         
         Professor professor = new Professor( matricula, nome, endereco, telefone, data, salario, escola);        
 
@@ -41,7 +42,7 @@ public class ProfessorActions extends ItensDoMenu implements Comparator<Professo
     @Override
     public boolean alterar(){
         Helper helper = new Helper();
-        String matricula = teclado.lerString("Informe a MATRICULA: ");
+        int matricula = teclado.lerInt("Informe a MATRICULA: ");
         Professor professor = (Professor) professorDao.pesquisar(matricula);
 
         if (professor == null) {
@@ -97,7 +98,7 @@ public class ProfessorActions extends ItensDoMenu implements Comparator<Professo
     
     @Override
     public boolean remover(){
-         String matricula = teclado.lerString("MATRICULA: ");
+        int matricula = teclado.lerInt("MATRICULA: ");
         Professor professor = (Professor) professorDao.pesquisar(matricula);
 
         if ( professor == null) {

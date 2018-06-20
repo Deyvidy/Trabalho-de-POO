@@ -8,7 +8,7 @@ package model;
 public class Aluno extends Pessoa {
     protected Curso curso;
 
-    public Aluno(String matricula,
+    public Aluno(int matricula,
                     String nome, Endereco endereco,
                     Agenda telefone, Curso curso) {		
 

@@ -1,16 +1,16 @@
 package model;
 
 public class Pessoa {
-	protected String matricula;
+	protected int matricula;
 	protected String nome;
 	protected Endereco endereco;
 	protected Agenda telefone;
 	
 	
-	public String getMatricula() {
+	public int getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(String matricula) {
+	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
 	public String getNome() {

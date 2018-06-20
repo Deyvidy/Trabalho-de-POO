@@ -17,10 +17,11 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
         Helper helper = new Helper();
         
         String nome = teclado.lerString("Nome: ");
-        int id = Id.getIdCurso();
         
         Escolas escola = helper.validarEscolas();
         if (escola == null) return false;
+        
+        int id = Id.getIdCurso();
         
         Curso curso = new Curso( id, nome, escola );        
 

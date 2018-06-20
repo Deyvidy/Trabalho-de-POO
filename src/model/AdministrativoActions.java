@@ -16,17 +16,18 @@ public class AdministrativoActions extends ItensDoMenu implements Comparator<Adm
      @Override
     public boolean inserir(){
         Helper helper = new Helper();
-        String matricula = Integer.toString(Id.getIdAdministrativo());
         String nome = teclado.lerString("NOME: ");
         
         Setor setor = helper.validarSetor();
-        if ( setor == null ) return false;
+        if ( setor == null ) return false;        
         
         Endereco endereco = helper.preencherEndereco();
         
         Agenda agenda = helper.preencherAgenda();
         
         Data admissao = helper.preencherDataAdmissao();
+        
+        int matricula = Id.getIdAdministrativo();
         
         float salario = (float) teclado.lerDouble("Salario: "); 
 
@@ -43,7 +44,7 @@ public class AdministrativoActions extends ItensDoMenu implements Comparator<Adm
      @Override
     public boolean alterar(){
         Helper helper = new Helper();
-        String matricula = teclado.lerString("Informe a MATRICULA: ");
+        int matricula = teclado.lerInt("Informe a MATRICULA: ");
         Administrativo administrativo = (Administrativo) administracaoDao.pesquisar(matricula);
 
         if (administrativo == null) {
@@ -98,7 +99,7 @@ public class AdministrativoActions extends ItensDoMenu implements Comparator<Adm
     
      @Override
     public boolean remover(){
-        String matricula = teclado.lerString("MATRICULA: ");
+        int matricula = teclado.lerInt("MATRICULA: ");
         Administrativo administrativo = (Administrativo) administracaoDao.pesquisar(matricula);
 
         if ( administrativo == null) {

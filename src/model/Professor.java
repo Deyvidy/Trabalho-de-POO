@@ -11,15 +11,15 @@ package model;
 public class Professor extends Funcionarios  {
     private Escolas escola;         
     
-    public Professor (String matricula ){
+    public Professor (int matricula ){
         this(matricula, null);
     }
     
-    public Professor(String matricula, String nome) {
+    public Professor(int matricula, String nome) {
 		this(matricula, nome, null, null,null,0.0f,null);
 	}
 	
-    public Professor(String matricula,
+    public Professor(int matricula,
                     String nome, Endereco endereco,
                     Agenda telefone, Data admissao,
                     float salario, Escolas escola) {		

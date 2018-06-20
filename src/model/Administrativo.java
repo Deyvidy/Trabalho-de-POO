@@ -9,7 +9,7 @@ package model;
 public class Administrativo extends Funcionarios{
     private Setor setor;
 
-    public Administrativo(String matricula,
+    public Administrativo(int matricula,
                     String nome, Endereco endereco,
                     Agenda telefone, Data admissao,
                     float salario, Setor setor) {		

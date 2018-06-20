@@ -16,7 +16,6 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
     public boolean inserir(){
         Helper helper = new Helper();
        
-        String matricula = Integer.toString(Id.getIdAluno());
         String nome = teclado.lerString("Informe o NOME: ");
         
         Curso curso = helper.validarCurso();
@@ -24,7 +23,9 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
         
         Endereco endereco = helper.preencherEndereco();
         
-        Agenda telefone = helper.preencherAgenda();       
+        Agenda telefone = helper.preencherAgenda();
+        
+        int matricula = Id.getIdAluno();
         
         Aluno aluno = new Aluno( matricula, nome, endereco, telefone, curso );        
 
@@ -38,7 +39,7 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
         @Override
     public boolean alterar(){
         Helper helper = new Helper();
-        String matricula = teclado.lerString("Informe a MATRICULA: ");
+        int matricula = teclado.lerInt("Informe a MATRICULA: ");
         Aluno aluno =  (Aluno) alunoDao.pesquisar(matricula);
 
         if (aluno == null) {
@@ -90,7 +91,7 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
     
         @Override
     public boolean remover(){
-        String matricula = teclado.lerString("MATRICULA: ");
+        int matricula = teclado.lerInt("MATRICULA: ");
         Aluno aluno = (Aluno) alunoDao.pesquisar(matricula);
 
         if ( aluno == null) {
@@ -98,6 +99,7 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
         }
         else {           
             alunoDao.remover(aluno);
+            System.out.println("ALUNO removido com sucesso!");
         }
 
         return false;

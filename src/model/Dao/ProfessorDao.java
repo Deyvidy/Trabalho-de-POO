@@ -25,7 +25,7 @@ public class ProfessorDao implements InterfaceDao<Professor>{
         for (int i = 0; i < bancoDeDados.size(); i++) {
                 Professor atual = bancoDeDados.get(i);
 
-                if (atual.getMatricula().equals(elemento)) {
+                if (atual.getNome().equals(elemento)) {
                         resultado = atual;
                         break;
                 }
@@ -34,6 +34,21 @@ public class ProfessorDao implements InterfaceDao<Professor>{
         return resultado;
     }
 
+    @Override
+    public Professor pesquisar(int elemento) {
+        Professor resultado = null;
+
+        for (int i = 0; i < bancoDeDados.size(); i++) {
+                Professor atual = bancoDeDados.get(i);
+
+                if (atual.getMatricula() == elemento ) {
+                        resultado = atual;
+                        break;
+                }
+        }
+
+        return resultado;
+    }
 
     @Override
     public void atualizar(Professor elemento) {
@@ -47,9 +62,5 @@ public class ProfessorDao implements InterfaceDao<Professor>{
             bancoDeDados.remove(elemento);
     }
 
-    @Override
-    public Professor pesquisar(int param) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }
