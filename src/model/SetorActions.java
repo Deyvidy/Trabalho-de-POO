@@ -32,8 +32,7 @@ public class SetorActions extends ItensDoMenu implements Comparator<Setor> {
             System.out.println("SETOR não encontrado!");
         }
         else {
-            System.out.println("ID: " + setor.getId());
-            System.out.println("NOME: " + setor.getNome());            
+            exibir(setor);
 
             String nome = teclado.lerString("Novo NOME: ");            
 
@@ -73,7 +72,7 @@ public class SetorActions extends ItensDoMenu implements Comparator<Setor> {
                 Setor atual = setor.get(i);
 
                 if (deveImprimir(atual)) {
-                        System.out.println(atual.getId()+ " - " + atual.getNome());
+                    exibir(i,atual);
                 }
         }
 
@@ -92,6 +91,17 @@ public class SetorActions extends ItensDoMenu implements Comparator<Setor> {
 		
         return nome1.compareTo(nome2);
     }
+    
+    public void exibir( int i, Setor setor ) {
+        System.out.println("ID: " + setor.getId());
+        System.out.println("NOME: " + setor.getNome());
+    }
+    
+    public void exibir( Setor setor ) {
+        System.out.println("ID: " + setor.getId());
+        System.out.println("NOME: " + setor.getNome());
+    }
+    
       
     
 }

@@ -29,7 +29,7 @@ public class AdministrativoActions extends ItensDoMenu implements Comparator<Adm
         
         int matricula = Id.getIdAdministrativo();
         
-        float salario = (float) teclado.lerDouble("Salario: "); 
+        float salario = (float) teclado.lerDouble("SALARIO: "); 
 
         Administrativo adm = new Administrativo(matricula, nome, endereco, agenda,
                 admissao, salario, setor );
