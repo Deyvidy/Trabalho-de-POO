@@ -15,7 +15,7 @@ public class DisciplinaActions extends ItensDoMenu implements Comparator<Discipl
     @Override
     public boolean inserir(){
                         
-        String nome = teclado.lerString("Nome: ");
+        String nome = teclado.lerString("NOME: ");
         
         int id = Id.getIdDisciplina();
                         
@@ -59,8 +59,7 @@ public class DisciplinaActions extends ItensDoMenu implements Comparator<Discipl
             
             inseriCursos(disciplina);
             
-            disciplinaDao.atualizar(disciplina);
-            
+            disciplinaDao.atualizar(disciplina);            
         }
 
         return false;
@@ -75,7 +74,8 @@ public class DisciplinaActions extends ItensDoMenu implements Comparator<Discipl
             System.out.println("DISCIPLINA não encontrada!");
         }
         else {
-            cursoDao.remover(disciplina);
+            disciplinaDao.remover(disciplina);
+            System.out.println("DISCIPLINA excluida com sucesso!");
         }
 
         return false;
@@ -131,7 +131,7 @@ public class DisciplinaActions extends ItensDoMenu implements Comparator<Discipl
     }
     
     public boolean removerCurso(Disciplina disciplina) {
-        Curso atual = null;
+        Curso atual;
         String elemento = teclado.lerString("Nome do CURSO que deseja remover");
         for(int j = 0; j < disciplina.getCursos().size(); j++) {
                 if ( disciplina.getCursos().get(j).getNome().equals(elemento)) {

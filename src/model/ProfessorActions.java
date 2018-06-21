@@ -49,24 +49,7 @@ public class ProfessorActions extends ItensDoMenu implements Comparator<Professo
             System.out.println("PROFESSORE não encontrado!");
         }
         else {
-            System.out.println("===================");
-            System.out.println("MATRICULA: " + professor.getMatricula());
-            System.out.println("NOME: " + professor.getNome());
-            System.out.println("ESCOLA: " + professor.getEscola().getNome());
-            System.out.println("SALARIO: " + professor.getSalario());
-            System.out.println("DATA DE ADMISSAO: " + professor.getAdmissao().getDia() + "/" 
-                    + professor.getAdmissao().getMes() 
-                    + "/" + professor.getAdmissao().getAno());
-            System.out.println("PAIS: " + professor.getEndereco().getPais());
-            System.out.println("ESTADO: " + professor.getEndereco().getEstado());
-            System.out.println("CIDADE: " + professor.getEndereco().getCidade());   
-            System.out.println("BAIRRO: " + professor.getEndereco().getBairro());          
-            System.out.println("CEP: " + professor.getEndereco().getCep());          
-            System.out.println("RUA: " + professor.getEndereco().getRua());          
-            System.out.println("Nº RESIDENCIA: " + professor.getEndereco().getNumero());
-            System.out.println("TELEFONE: " + professor.getTelefone().getNumero());
-            System.out.println("E-MAIL: " + professor.getTelefone().getEmail());
-            System.out.println("===================");
+            exibir(professor);
 
             String nome = teclado.lerString("Novo NOME: "); 
             professor.setNome(nome);      
@@ -119,27 +102,11 @@ public class ProfessorActions extends ItensDoMenu implements Comparator<Professo
         Collections.sort(professor, this);
 
         for (int i = 0; i < professor.size(); i++) {
-                Professor atual = professor.get(i);
+            Professor atual = professor.get(i);
 
-                if (deveImprimir(atual)) {
-                    System.out.println("MATRICULA: " + atual.getMatricula());
-                    System.out.println("NOME: " + atual.getNome());
-                    System.out.println("ESCOLA: " + atual.getEscola().getNome());
-                    System.out.println("SALARIO: " + atual.getSalario());
-                    System.out.println("DATA DE ADMISSAO: " + atual.getAdmissao().getDia() + "/" 
-                            + atual.getAdmissao().getMes() 
-                            + "/" + atual.getAdmissao().getAno());
-                    System.out.println("PAIS: " + atual.getEndereco().getPais());
-                    System.out.println("ESTADO: " + atual.getEndereco().getEstado());
-                    System.out.println("CIDADE: " + atual.getEndereco().getCidade());   
-                    System.out.println("BAIRRO: " + atual.getEndereco().getBairro());          
-                    System.out.println("CEP: " + atual.getEndereco().getCep());          
-                    System.out.println("RUA: " + atual.getEndereco().getRua());          
-                    System.out.println("Nº RESIDENCIA: " + atual.getEndereco().getNumero());
-                    System.out.println("TELEFONE: " + atual.getTelefone().getNumero());
-                    System.out.println("E-MAIL: " + atual.getTelefone().getEmail());
-                    System.out.println("===================");
-                }
+            if (deveImprimir(atual)) {
+                exibir(i,atual);
+            }
         }
 
         return false;
@@ -157,5 +124,44 @@ public class ProfessorActions extends ItensDoMenu implements Comparator<Professo
         return nome1.compareTo(nome2);
     }
     
+    public void exibir(int i, Professor atual ){
+        System.out.println("===================");
+        System.out.println("MATRICULA: " + atual.getMatricula());
+        System.out.println("NOME: " + atual.getNome());
+        System.out.println("ESCOLA: " + atual.getEscola().getNome());
+        System.out.println("SALARIO: " + atual.getSalario());
+        System.out.println("DATA DE ADMISSAO: " + atual.getAdmissao().getDia() + "/" 
+                + atual.getAdmissao().getMes() 
+                + "/" + atual.getAdmissao().getAno());
+        System.out.println("PAIS: " + atual.getEndereco().getPais());
+        System.out.println("ESTADO: " + atual.getEndereco().getEstado());
+        System.out.println("CIDADE: " + atual.getEndereco().getCidade());   
+        System.out.println("BAIRRO: " + atual.getEndereco().getBairro());          
+        System.out.println("CEP: " + atual.getEndereco().getCep());          
+        System.out.println("RUA: " + atual.getEndereco().getRua());          
+        System.out.println("Nº RESIDENCIA: " + atual.getEndereco().getNumero());
+        System.out.println("TELEFONE: " + atual.getTelefone().getNumero());
+        System.out.println("E-MAIL: " + atual.getTelefone().getEmail());
+    }
     
+    public void exibir( Professor professor ){
+        System.out.println("===================");
+        System.out.println("MATRICULA: " + professor.getMatricula());
+        System.out.println("NOME: " + professor.getNome());
+        System.out.println("ESCOLA: " + professor.getEscola().getNome());
+        System.out.println("SALARIO: " + professor.getSalario());
+        System.out.println("DATA DE ADMISSAO: " + professor.getAdmissao().getDia() + "/" 
+                + professor.getAdmissao().getMes() 
+                + "/" + professor.getAdmissao().getAno());
+        System.out.println("PAIS: " + professor.getEndereco().getPais());
+        System.out.println("ESTADO: " + professor.getEndereco().getEstado());
+        System.out.println("CIDADE: " + professor.getEndereco().getCidade());   
+        System.out.println("BAIRRO: " + professor.getEndereco().getBairro());          
+        System.out.println("CEP: " + professor.getEndereco().getCep());          
+        System.out.println("RUA: " + professor.getEndereco().getRua());          
+        System.out.println("Nº RESIDENCIA: " + professor.getEndereco().getNumero());
+        System.out.println("TELEFONE: " + professor.getTelefone().getNumero());
+        System.out.println("E-MAIL: " + professor.getTelefone().getEmail());
+        System.out.println("===================");
+    }
 }

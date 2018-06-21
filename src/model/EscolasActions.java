@@ -37,10 +37,23 @@ public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
         }
         else {
             System.out.println("ID: " + escolas.getId());
-            System.out.println("NOME: " + escolas.getNome());            
-
+            System.out.println("NOME: " + escolas.getNome()); 
+            for(int j = 0; j < escolas.getProfessoresQueLecionam().size(); j++) {
+                System.out.println("PROFESSOR: " + escolas.getProfessoresQueLecionam().get(j).getNome());
+            }
+            
             String nome = teclado.lerString("Novo NOME: ");
             escolas.setNome(nome);            
+            
+            String opInserir = teclado.lerString("Deseja associar PROFESSORES a esta ESCOLA? [S]- SIM [N] - NÃO: ");  
+            if( "S".equals(opInserir) || "s".equals(opInserir) ){
+                inseriProfessor( escolas );
+            }        
+            
+            String opRemover = teclado.lerString("Deseja remover PROFESSORES associados a esta ESCOLA? [S]- SIM [N] - NÃO: ");  
+            if( "S".equals(opRemover) || "s".equals(opRemover) ){
+                removerProfessor( escolas );
+            }    
 
             escolaDao.atualizar(escolas);            
         }
@@ -95,5 +108,28 @@ public class EscolasActions extends ItensDoMenu implements Comparator<Escolas> {
         String nome2 = t1.getNome();
 		
         return nome1.compareTo(nome2);
+    }
+    
+    public boolean inseriProfessor( Escolas escola ) {
+        Helper helper = new Helper();                   
+                
+        Professor professor = helper.validarProfessor();
+        escola.getProfessoresQueLecionam().add(professor);                        
+                     
+        return false;
+    }
+    
+    public boolean removerProfessor( Escolas escola ) {
+        Professor atual;
+        String elemento = teclado.lerString("Nome do PROFESSOR que deseja remover: ");
+        for(int j = 0; j < escola.getProfessoresQueLecionam().size(); j++) {
+                if ( escola.getProfessoresQueLecionam().get(j).getNome().equals(elemento)) {
+                    atual = escola.getProfessoresQueLecionam().get(j);
+                    escola.getProfessoresQueLecionam().remove(atual);
+                } else {
+                    break;
+                }
+        }
+        return false;
     }
 }

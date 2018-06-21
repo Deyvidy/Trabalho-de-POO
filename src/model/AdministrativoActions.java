@@ -11,8 +11,7 @@ import view.ItensDoMenu;
  */
 
 public class AdministrativoActions extends ItensDoMenu implements Comparator<Administrativo> {
-     private int quantidade;
-        
+            
      @Override
     public boolean inserir(){
         Helper helper = new Helper();
@@ -50,24 +49,7 @@ public class AdministrativoActions extends ItensDoMenu implements Comparator<Adm
         if (administrativo == null) {
             System.out.println("FUNCIONARIO não encontrado!");
         } else {
-            System.out.println("===================");
-            System.out.println("ID: " + administrativo.getMatricula());
-            System.out.println("NOME: " + administrativo.getNome());
-            System.out.println("SETOR: " + administrativo.getSetor().getNome());
-            System.out.println("SALARIO: " + administrativo.getSalario());
-            System.out.println("DATA DE ADMISSAO: " + administrativo.getAdmissao().getDia() + "/" 
-                    + administrativo.getAdmissao().getMes() 
-                    + "/" + administrativo.getAdmissao().getAno());
-            System.out.println("PAIS: " + administrativo.getEndereco().getPais());
-            System.out.println("ESTADO: " + administrativo.getEndereco().getEstado());
-            System.out.println("CIDADE: " + administrativo.getEndereco().getCidade());   
-            System.out.println("BAIRRO: " + administrativo.getEndereco().getBairro());          
-            System.out.println("CEP: " + administrativo.getEndereco().getCep());          
-            System.out.println("RUA: " + administrativo.getEndereco().getRua());          
-            System.out.println("Nº RESIDENCIA: " + administrativo.getEndereco().getNumero());
-            System.out.println("TELEFONE: " + administrativo.getTelefone().getNumero());
-            System.out.println("E-MAIL: " + administrativo.getTelefone().getEmail());
-            System.out.println("===================");
+            exibir(administrativo);
 
             String nome = teclado.lerString("Novo NOME: ");
             administrativo.setNome(nome);
@@ -121,27 +103,11 @@ public class AdministrativoActions extends ItensDoMenu implements Comparator<Adm
         Collections.sort(administrativo, this);
 
         for (int i = 0; i < administrativo.size(); i++) {
-                Administrativo atual = administrativo.get(i);
+            Administrativo atual = administrativo.get(i);
 
-                if (deveImprimir(atual)) {
-                    System.out.println("ID: " + atual.getMatricula());
-                    System.out.println("NOME: " + atual.getNome());
-                    System.out.println("SETOR: " + atual.getSetor().getNome());
-                    System.out.println("SALARIO: " + atual.getSalario());
-                    System.out.println("DATA DE ADMISSAO: " + atual.getAdmissao().getDia() + "/" 
-                            + atual.getAdmissao().getMes() 
-                            + "/" + atual.getAdmissao().getAno());
-                    System.out.println("PAIS: " + atual.getEndereco().getPais());
-                    System.out.println("ESTADO: " + atual.getEndereco().getEstado());
-                    System.out.println("CIDADE: " + atual.getEndereco().getCidade());   
-                    System.out.println("BAIRRO: " + atual.getEndereco().getBairro());          
-                    System.out.println("CEP: " + atual.getEndereco().getCep());          
-                    System.out.println("RUA: " + atual.getEndereco().getRua());          
-                    System.out.println("Nº RESIDENCIA: " + atual.getEndereco().getNumero());
-                    System.out.println("TELEFONE: " + atual.getTelefone().getNumero());
-                    System.out.println("E-MAIL: " + atual.getTelefone().getEmail());
-                    System.out.println("===================");
-                }
+            if (deveImprimir(atual)) {
+                exibir(i,atual);
+            }
         }
 
         return false;
@@ -157,6 +123,47 @@ public class AdministrativoActions extends ItensDoMenu implements Comparator<Adm
         String nome2 = t1.getNome();
 		
         return nome1.compareTo(nome2);
+    }
+    
+    public void exibir( int i, Administrativo atual ) {
+        System.out.println("===================");
+        System.out.println("ID: " + atual.getMatricula());
+        System.out.println("NOME: " + atual.getNome());
+        System.out.println("SETOR: " + atual.getSetor().getNome());
+        System.out.println("SALARIO: " + atual.getSalario());
+        System.out.println("DATA DE ADMISSAO: " + atual.getAdmissao().getDia() + "/" 
+                + atual.getAdmissao().getMes() 
+                + "/" + atual.getAdmissao().getAno());
+        System.out.println("PAIS: " + atual.getEndereco().getPais());
+        System.out.println("ESTADO: " + atual.getEndereco().getEstado());
+        System.out.println("CIDADE: " + atual.getEndereco().getCidade());   
+        System.out.println("BAIRRO: " + atual.getEndereco().getBairro());          
+        System.out.println("CEP: " + atual.getEndereco().getCep());          
+        System.out.println("RUA: " + atual.getEndereco().getRua());          
+        System.out.println("Nº RESIDENCIA: " + atual.getEndereco().getNumero());
+        System.out.println("TELEFONE: " + atual.getTelefone().getNumero());
+        System.out.println("E-MAIL: " + atual.getTelefone().getEmail());
+    }
+    
+    public void exibir( Administrativo administrativo ) {
+        System.out.println("===================");
+            System.out.println("ID: " + administrativo.getMatricula());
+            System.out.println("NOME: " + administrativo.getNome());
+            System.out.println("SETOR: " + administrativo.getSetor().getNome());
+            System.out.println("SALARIO: " + administrativo.getSalario());
+            System.out.println("DATA DE ADMISSAO: " + administrativo.getAdmissao().getDia() + "/" 
+                    + administrativo.getAdmissao().getMes() 
+                    + "/" + administrativo.getAdmissao().getAno());
+            System.out.println("PAIS: " + administrativo.getEndereco().getPais());
+            System.out.println("ESTADO: " + administrativo.getEndereco().getEstado());
+            System.out.println("CIDADE: " + administrativo.getEndereco().getCidade());   
+            System.out.println("BAIRRO: " + administrativo.getEndereco().getBairro());          
+            System.out.println("CEP: " + administrativo.getEndereco().getCep());          
+            System.out.println("RUA: " + administrativo.getEndereco().getRua());          
+            System.out.println("Nº RESIDENCIA: " + administrativo.getEndereco().getNumero());
+            System.out.println("TELEFONE: " + administrativo.getTelefone().getNumero());
+            System.out.println("E-MAIL: " + administrativo.getTelefone().getEmail());
+            System.out.println("===================");
     }
     
 }

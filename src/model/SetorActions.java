@@ -95,11 +95,14 @@ public class SetorActions extends ItensDoMenu implements Comparator<Setor> {
     public void exibir( int i, Setor setor ) {
         System.out.println("ID: " + setor.getId());
         System.out.println("NOME: " + setor.getNome());
+        System.out.println("===================");
     }
     
     public void exibir( Setor setor ) {
+        System.out.println("===================");
         System.out.println("ID: " + setor.getId());
         System.out.println("NOME: " + setor.getNome());
+        System.out.println("===================");
     }
     
       

@@ -14,6 +14,7 @@ public class Main {
     
     
     public static void main(String[] args) {
+        String[] back = null;
         Scanner teclado = new Scanner(System.in);         
                
         System.out.println("Qual a opção desejada: ");
@@ -24,28 +25,31 @@ public class Main {
                 + "\n[0] Sair"
         );
         
-        boolean sair = false;
+        boolean sair = true;
         
-        int op = teclado.nextInt();
+        String op = teclado.next();
         do {  
             switch (op) {
-                case 1:
+                case "1":
                     cadastro(teclado);
                 break;
-                case 2:
+                case "2":
                     listagem(teclado);
                 break;
-                case 3:
+                case "3":
                    alteracao(teclado);
                 break;
-                case 4:
+                case "4":
                     exclusao(teclado);
                 break;
-                case 0:
-                    sair = true;                    
+                case "0":
+                   sair = false; 
                 break;
+                default:
+                    System.out.println("Opcao invalida tente novamente");                   
+                    main(back);
             }                
-        } while (!sair);        
+        } while (sair);        
     }     
     
     public static void cadastro ( Scanner teclado ){
@@ -76,47 +80,50 @@ public class Main {
             );
             
         do {
-            int opcao = teclado.nextInt();
+            String opcao = teclado.next();
              switch (opcao) {
-                case 1:
+                case "1":
                     administrativo.inserir();
                     main(back);
                 break;
-                case 2:
+                case "2":
                     professor.inserir();
                     main(back);
                 break;
-                case 3:
+                case "3":
                     aluno.inserir();
                     main(back);
                 break;
-                case 4:
+                case "4":
                     setor.inserir();
                     main(back);
                 break;
-                case 5:
+                case "5":
                     turmas.inserir();
                     main(back);
                 break;
-                case 6:
+                case "6":
                     curso.inserir();
                     main(back);
                 break;
-                case 7:
+                case "7":
                     disciplina.inserir();
                     main(back);
                 break;
-                case 8:
+                case "8":
                     escola.inserir();
                     main(back);
                 break;
-                case 9:
+                case "9":
                     turmas.inserirAlunoNaTurma();
                     main(back);
                 break;
-                case 0:
-                    sair = voltar.executar();                  
+                case "0":
+                    sair =  voltar.executar();                 
                 break;
+                default:
+                    System.out.println("Opcao invalida tente novamente");                   
+                    cadastro(teclado);
             }           
             if (sair){
                 main(back);
@@ -151,43 +158,46 @@ public class Main {
             );
             
         do {
-            int opcao = teclado.nextInt();
+            String opcao = teclado.next();
              switch (opcao) {
-                case 1:
+                case "1":
                     administrativo.listar();
                     main(back);
                 break;
-                case 2:
+                case "2":
                     professor.listar();
                     main(back);
                 break;
-                case 3:
+                case "3":
                     aluno.listar();
                     main(back);
                 break;
-                case 4:
+                case "4":
                     setor.listar();
                     main(back);
                 break;
-                case 5:
+                case "5":
                     turmas.listar();
                     main(back);
                 break;
-                case 6:
+                case "6":
                     curso.listar();
                     main(back);
                 break;
-                case 7:
+                case "7":
                     disciplina.listar();
                     main(back);
                 break;
-                case 8:
+                case "8":
                     escola.listar();
                     main(back);
                 break;
-                case 0:
+                case "0":
                     sair = voltar.executar();                  
                 break;
+                default:
+                    System.out.println("Opcao invalida tente novamente");                   
+                    listagem(teclado);
             }           
             if (sair){
                 main(back);
@@ -223,43 +233,46 @@ public class Main {
             );
             
         do {
-            int opcao = teclado.nextInt();
-             switch (opcao) {
-                case 1:
+            String opcao = teclado.next();
+            switch (opcao) {
+                case "1":
                     administrativo.alterar();
                     main(back);
                 break;
-                case 2:
+                case "2":
                     professor.alterar();
                     main(back);
                 break;
-                case 3:
+                case "3":
                     aluno.alterar();
                     main(back);
                 break;
-                case 4:
+                case "4":
                     setor.alterar();
                     main(back);
                 break;
-                case 5:
+                case "5":
                     turmas.alterar();
                     main(back);
                 break;
-                case 6:
+                case "6":
                     curso.alterar();
                     main(back);
                 break;
-                case 7:
+                case "7":
                     disciplina.alterar();
                     main(back);
                 break;
-                case 8:
+                case "8":
                     escola.alterar();
                     main(back);
                 break;
-                case 0:
+                case "0":
                     sair = voltar.executar();                  
                 break;
+                default:
+                    System.out.println("Opcao invalida tente novamente");                   
+                    alteracao(teclado);
             }           
             if (sair){
                 main(back);
@@ -295,43 +308,46 @@ public class Main {
             
             
         do {
-            int opcao = teclado.nextInt();
-             switch (opcao) {
-                case 1:
+            String opcao = teclado.next();
+            switch (opcao) {
+                case "1":
                     administrativo.remover();
                     main(back);
                 break;
-                case 2:
+                case "2":
                     professor.remover();
                     main(back);
                 break;
-                case 3:
+                case "3":
                     aluno.remover();
                     main(back);
                 break;
-                case 4:
+                case "4":
                     setor.remover();
                     main(back);
                 break;
-                case 5:
+                case "5":
                     turmas.remover();
                     main(back);
                 break;
-                case 6:
+                case "6":
                     curso.remover();
                     main(back);
                 break;
-                case 7:
+                case "7":
                     disciplina.remover();
                     main(back);
                 break;
-                case 8:
+                case "8":
                     escola.remover();
                     main(back);
                 break;
-                case 0:
+                case "0":
                     sair = voltar.executar();                  
                 break;
+                default:
+                    System.out.println("Opcao invalida tente novamente");                   
+                    exclusao(teclado);
             }           
             if (sair){
                 main(back);

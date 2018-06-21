@@ -42,9 +42,7 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
             System.out.println("CURSO não encontrado!");
         }
         else {
-            System.out.println("ID: " + curso.getId());
-            System.out.println("NOME: " + curso.getNome());
-            System.out.println("ESCOLA: " + curso.getEscola().getNome());                 
+            exibir(curso);
 
             String nome = teclado.lerString("Novo NOME: ");
                         
@@ -52,10 +50,8 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
             
             curso.setEscola(escola);
             curso.setNome(nome);
-            cursoDao.atualizar(curso);
-            
+            cursoDao.atualizar(curso);            
         }
-
         return false;
     }
     
@@ -69,6 +65,7 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
         }
         else {
             cursoDao.remover(curso);
+            System.out.println("CURSO excluido com sucesso!");
         }
 
         return false;
@@ -76,16 +73,16 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
     
     @Override
     public boolean listar(){
-         ArrayList<Curso> curso = cursoDao.listar();
+        ArrayList<Curso> curso = cursoDao.listar();
 
         Collections.sort(curso, this);
 
         for (int i = 0; i < curso.size(); i++) {
-                Curso atual = curso.get(i);
+            Curso atual = curso.get(i);
 
-                if (deveImprimir(atual)) {
-                    System.out.println(atual.getId()+ " - " + atual.getNome() + " - " + atual.escola.getNome());
-                }
+            if (deveImprimir(atual)) {
+                exibir(i,atual);
+            }
         }
 
         return false;
@@ -101,6 +98,21 @@ public class CursoActions extends ItensDoMenu implements Comparator<Curso> {
         String nome2 = t1.getNome();
 		
         return nome1.compareTo(nome2);
+    }
+    
+    public void exibir ( int i, Curso curso ) {
+        System.out.println("ID: " + curso.getId());
+        System.out.println("NOME: " + curso.getNome());
+        System.out.println("ESCOLA: " + curso.getEscola().getNome()); 
+        System.out.println("===================");
+    }
+    
+    public void exibir ( Curso curso ) {
+        System.out.println("===================");
+        System.out.println("ID: " + curso.getId());
+        System.out.println("NOME: " + curso.getNome());
+        System.out.println("ESCOLA: " + curso.getEscola().getNome()); 
+        System.out.println("===================");
     }
     
 }

@@ -46,20 +46,7 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
             System.out.println("ALUNO não encontrado!");
         }
         else {
-            System.out.println("===================");
-            System.out.println("MATRICULA: " + aluno.getMatricula());
-            System.out.println("NOME: " + aluno.getNome());
-            System.out.println("CURSO: " + aluno.getCurso().getNome()); 
-            System.out.println("PAIS: " + aluno.getEndereco().getPais());
-            System.out.println("ESTADO: " + aluno.getEndereco().getEstado());
-            System.out.println("CIDADE: " + aluno.getEndereco().getCidade());   
-            System.out.println("BAIRRO: " + aluno.getEndereco().getBairro());          
-            System.out.println("CEP: " + aluno.getEndereco().getCep());          
-            System.out.println("RUA: " + aluno.getEndereco().getRua());          
-            System.out.println("Nº RESIDENCIA: " + aluno.getEndereco().getNumero());
-            System.out.println("TELEFONE: " + aluno.getTelefone().getNumero());
-            System.out.println("E-MAIL: " + aluno.getTelefone().getEmail());
-            System.out.println("===================");
+            exibir(aluno);
                         
             String nome = teclado.lerString("Novo NOME: ");
             aluno.setNome(nome);
@@ -114,20 +101,8 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
         for (int i = 0; i < aluno.size(); i++) {
                 Aluno atual = aluno.get(i);
 
-                if (deveImprimir(atual)) {                        
-                        System.out.println("MATRICULA: " + atual.getMatricula());
-                        System.out.println("NOME: " + atual.getNome());
-                        System.out.println("CURSO: " + atual.getCurso().getNome()); 
-                        System.out.println("PAIS: " + atual.getEndereco().getPais());
-                        System.out.println("ESTADO: " + atual.getEndereco().getEstado());
-                        System.out.println("CIDADE: " + atual.getEndereco().getCidade());   
-                        System.out.println("BAIRRO: " + atual.getEndereco().getBairro());          
-                        System.out.println("CEP: " + atual.getEndereco().getCep());          
-                        System.out.println("RUA: " + atual.getEndereco().getRua());          
-                        System.out.println("Nº RESIDENCIA: " + atual.getEndereco().getNumero());
-                        System.out.println("TELEFONE: " + atual.getTelefone().getNumero());
-                        System.out.println("E-MAIL: " + atual.getTelefone().getEmail());
-                        System.out.println("===================");
+                if (deveImprimir(atual)) {
+                    exibir(i,atual);
                 }
         }
 
@@ -145,6 +120,39 @@ public class AlunoActions extends ItensDoMenu implements Comparator<Aluno> {
         String nome2 = t1.getNome();
 		
         return nome1.compareTo(nome2);
+    }
+    
+    public void exibir( int i, Aluno atual ) {
+        System.out.println("===================");
+        System.out.println("MATRICULA: " + atual.getMatricula());
+        System.out.println("NOME: " + atual.getNome());
+        System.out.println("CURSO: " + atual.getCurso().getNome()); 
+        System.out.println("PAIS: " + atual.getEndereco().getPais());
+        System.out.println("ESTADO: " + atual.getEndereco().getEstado());
+        System.out.println("CIDADE: " + atual.getEndereco().getCidade());   
+        System.out.println("BAIRRO: " + atual.getEndereco().getBairro());          
+        System.out.println("CEP: " + atual.getEndereco().getCep());          
+        System.out.println("RUA: " + atual.getEndereco().getRua());          
+        System.out.println("Nº RESIDENCIA: " + atual.getEndereco().getNumero());
+        System.out.println("TELEFONE: " + atual.getTelefone().getNumero());
+        System.out.println("E-MAIL: " + atual.getTelefone().getEmail());        
+    }
+    
+    public void exibir( Aluno aluno ) {
+        System.out.println("===================");
+        System.out.println("MATRICULA: " + aluno.getMatricula());
+        System.out.println("NOME: " + aluno.getNome());
+        System.out.println("CURSO: " + aluno.getCurso().getNome()); 
+        System.out.println("PAIS: " + aluno.getEndereco().getPais());
+        System.out.println("ESTADO: " + aluno.getEndereco().getEstado());
+        System.out.println("CIDADE: " + aluno.getEndereco().getCidade());   
+        System.out.println("BAIRRO: " + aluno.getEndereco().getBairro());          
+        System.out.println("CEP: " + aluno.getEndereco().getCep());          
+        System.out.println("RUA: " + aluno.getEndereco().getRua());          
+        System.out.println("Nº RESIDENCIA: " + aluno.getEndereco().getNumero());
+        System.out.println("TELEFONE: " + aluno.getTelefone().getNumero());
+        System.out.println("E-MAIL: " + aluno.getTelefone().getEmail());
+        System.out.println("===================");
     }
     
 }

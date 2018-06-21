@@ -27,12 +27,6 @@ public class TurmasActions extends ItensDoMenu implements Comparator<Turmas> {
         
         Turmas turma = new Turmas( id, nome, disciplina, professor);
         
-        ArrayList<Aluno> aluno = alunoDao.listar();
-        
-        for( int i = 0; i <aluno.size(); i++ ) {
-            
-        }
-
         turmasDao.inserir(turma);
         System.out.println("Turma cadastrada com sucesso!");
         return false;
@@ -51,6 +45,8 @@ public class TurmasActions extends ItensDoMenu implements Comparator<Turmas> {
             System.out.println("===================");
             System.out.println("ID: " + turma.getId());
             System.out.println("NOME: " + turma.getNome());
+            System.out.println("PROFESSOR: " + turma.getProfessor().getNome());
+            System.out.println("DISCIPLINA: " + turma.getDisciplina().getNome());
             System.out.println("===================");            
 
             String nome = teclado.lerString("Novo NOME: "); 
@@ -60,6 +56,13 @@ public class TurmasActions extends ItensDoMenu implements Comparator<Turmas> {
             if( "S".equals(opProf) || "s".equals(opProf) ){
                 Professor professor = helper.validarProfessor();
                 turma.setProfessor(professor);
+            } 
+            
+            inseriAlunos(turma);
+            
+            String opAluno = teclado.lerString("Deseja remover ALUNOS desta TURMA? [S]- SIM [N] - NÃO: ");  
+            if( "S".equals(opAluno) || "s".equals(opAluno) ){
+                removerAlunos(turma);
             } 
             
             turmasDao.atualizar(turma);            
@@ -97,7 +100,7 @@ public class TurmasActions extends ItensDoMenu implements Comparator<Turmas> {
                     System.out.println("ID: " + atual.getId());
                     System.out.println("NOME: " + atual.getNome());
                     System.out.println("PROFESSOR: " + atual.getProfessor().getNome());
-                    
+                    System.out.println("DISCIPLINA: " + atual.getDisciplina().getNome());
                     for ( int j = 0; j < atual.getAlunos().size(); j++ ) {
                         System.out.println("ALUNOS: " + atual.getAlunos().get(j).getNome());
                     }
@@ -145,11 +148,40 @@ public class TurmasActions extends ItensDoMenu implements Comparator<Turmas> {
                     break;
                 }
             }            
-            // Falta alterar os alunos da turma
+            
             
             turmasDao.atualizar(turma);            
         }
 
+        return false;
+    }
+    public boolean inseriAlunos( Turmas turma ){        
+        Helper helper = new Helper();
+        boolean sair = true;
+            while( sair ) {                
+                String opCurso = teclado.lerString("Deseja informa os ALUNOS desta TURMA? [S]- SIM [N] - NÃO: ");  
+                if( "S".equals(opCurso) || "s".equals(opCurso) ){
+                    Aluno aluno = helper.validarAluno();
+                    turma.getAlunos().add(aluno);
+                } else {
+                    break;
+                }
+            }            
+        return false;
+    }
+        
+    
+    public boolean removerAlunos(Turmas turma) {
+        Aluno atual;
+        String elemento = teclado.lerString("Nome do ALUNO que deseja remover desta TURMA: ");
+        for(int j = 0; j < turma.getAlunos().size(); j++) {
+                if ( turma.getAlunos().get(j).getNome().equals(elemento)) {
+                    atual = turma.getAlunos().get(j);
+                    turma.getAlunos().remove(atual);
+                } else {
+                    break;
+                }
+        }
         return false;
     }
     
